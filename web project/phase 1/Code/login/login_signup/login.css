@@ -1,0 +1,65 @@
+
+/* login styling  */
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+/*loging fieldset styling */
+.login_fieldset {
+    border: 2px solid #abe9fc;
+    border-radius: 20px;
+    padding: 30px;
+    width: 550px;
+    background-color: #fcefff;
+    margin-bottom: 100px;
+}
+/* loging fieldset legend styling */
+.login_fieldset legend {
+    font-size: 1.2em;
+    color: #44067b;
+    padding: 10px;
+}
+/* loging fieldset labels styling */
+.login_fieldset label {
+    display: block;
+    margin-bottom: 5px;
+    color: #44067b;
+}
+/* login input stylig */
+.login_fieldset input[type="text"],
+.login_fieldset input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/* login submit button styling */
+.login_fieldset input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin:10px 10px ;
+    background-color: #44067b;
+    color: rgb(136, 241, 241);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.login h5 {
+    color: #44067b;
+}
+/* logo styling */
+.logo {
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+
+}
+/* page background color */
+body {
+    background-color: #ecf7f7;
+}
+
+
