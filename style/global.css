@@ -1,0 +1,184 @@
+:root {
+  /* --rose-main: #be123c;
+  --rose-soft: #ffe4e6; */
+
+  --bg: cadetblue;
+  /* --text: #881337;
+  --color-link: #e11d48; */
+}
+
+@media(min-width:1024px){
+    .login{
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 32px;
+        /* background-color: cadetblue; */
+    }
+    .logo{
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+}
+
+@media(min-width:768px){
+    .login{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px 24px;
+
+    }
+}
+
+*{
+    box-sizing:border-box ;
+    margin: 0;
+    padding: 0;
+}
+
+/* try to add more of flexbox and grids  */
+.header{
+    background-color: bisque;
+    color: rgb(155, 106, 43);
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 20px;
+
+}
+
+body{
+    background-color: cadetblue;
+    transition: all ease 250ms;
+    /* color: var(--text); */
+    background: var(--bg);
+    /* font-size: 1.3em; */
+}
+
+.login{
+    /* background-color: gray; */
+    font-family: 'Times New Roman', Times, serif;
+    color: bisque;
+    border-radius: 5px;
+}
+/* why 2 .login classes? I think you can merge them together and add the properties in one class. */
+.login{
+    /* background-color: rgb(100, 73, 41); */
+    padding: 50px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+h1,h2,h3{
+    margin-bottom: 5rem;
+    background-color: cadetblue;
+    border-radius: 5px;
+    color: rgb(46, 38, 53);
+    flex-wrap: nowrap;
+}
+
+main{
+    background-color: bisque; 
+    padding: 50px;
+    /* border-color: rgb(160, 99, 8); */
+    border-radius: 5px;
+}
+
+.header01{
+    padding: 25px;
+    margin: 50 px; 
+    box-shadow: 40px;
+    color:cadetblue;
+    /* background-color: rgb(46, 38, 53); */
+    border-radius: 25px;
+}
+
+#create-a-post{
+    margin-top: 20px;
+    color: cadetblue;
+    background-color: bisque;
+    padding: 30px;
+    flex-direction: row;
+    ms-flex-align: center;
+}
+
+/*loging fieldset styling */
+.login_fieldset {
+    border: 2px solid #abe9fc;
+    border-radius: 20px;
+    padding: 30px;
+    width: 550px;
+    background-color: #fcefff;
+    margin-bottom: 100px;
+}
+
+/* loging fieldset legend styling */
+.login_fieldset legend {
+    font-size: 1.2em;
+    color: #44067b;
+    padding: 10px;
+}
+
+/* loging fieldset labels styling */
+.login_fieldset label {
+    display: block;
+    margin-bottom: 5px;
+    color: #44067b;
+}
+
+/* login input stylig */
+.login_fieldset input[type="text"],
+.login_fieldset input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* login submit button styling */
+.login_fieldset input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin:10px 10px ;
+    background-color: #44067b;
+    color: rgb(136, 241, 241);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login h5 {
+    color: #44067b;
+}
+
+/* logo styling */
+.logo {
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+    /* margin-bottom: 0px; */
+}
+
+/* page background color in login page */
+body {
+    background-color: #ecf7f7;
+}
+
+button{
+    border-radius: 5px;
+    color:rgb(46, 38, 53) ;
+    background-color: bisque;
+}
+
+.footer{
+    /* background-color: rgb(46, 38, 53); */
+    padding: 20px;
+    color:cadetblue;
+}
+
+
+
+
+
