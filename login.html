@@ -7,33 +7,32 @@
     <link rel="stylesheet" href="style/global.css">
 </head>
 <body>
+    <header>
+        <h1>Welcome to Log In and Create a post page</h1>
+        <img  src="media/images/flow_logo.png" width="200">
+    </header>
     <main>
-    <h1 class="header01">Welcome to Log In and Create a post page</h1>
+        <section class="login">
+            <h2 class="loginHeader">Log in</h2>
 
-    <section class="login">
-        <h2>Log in</h2>
+            <p>Please enter the credentials you just created, or if you already have an acount already , please log in</p>
 
-        <p>Please enter the credentials you just created, or if you already have an acount already , please log in</p>
+            <!-- here, weh have to let the user to enter data
+            and we have to activate button for submission , where 
+            this link will take him to his acocund , so we have 
+            to add a link within this button -->
+        <form>
+            <label  for="email" class="email">Email</label>
+            <input required  type="email" id="email" placeholder="Enter your email"><br>
+            <label  for="pass">Password</label>
+            <input  required   type="password" id="pass" name="pass" placeholder="Enter your password"><br>
+            <!-- <button type="submit"  onclick="location.href='profile.html'">Submit</button> -->
+            <button type="submit" onclick="location.href='profile.html'">Submit</button>
+        </form>
+        </section>  
+    </main>
+    <footer ><p>Thanks for using our website..!</p></footer>
 
-        <!-- here, weh have to let the user to enter data
-         and we have to activate button for submission , where 
-         this link will take him to his acocund , so we have 
-         to add a link within this button -->
-
-
-    <form>
-        <label  for="email" class="email">Email</label>
-        <input required  type="email" id="email" placeholder="Enter your email"><br>
-        <label  for="pass" name="pass">Password</label>
-        <input  required   type="password" id="pass" name="pass" placeholder="Enter your password"></input><br>
-        <!-- <button type="submit"  onclick="location.href='profile.html'">Submit</button> -->
-         <button type="submit">Submit</button>
-         <a href="profile.html">Submit</a>
-    </form>
-
-    </section>  
-</main>
 </body>
 
-<footer class="footer"><p>Thanks for using our website..!</p></footer>
 </html>
