@@ -8,28 +8,31 @@
     
 </head>
 <body>
-<header><h1>Flow <br>Start your  flow journey</></h1>
+<header><h1>Flow Start your flow journey</h1>
     <img src="media\images\flow_logo.png" alt="Flow Logo" width="200">
     <section class="signup">
     <h3>Join Flow Community</h3>
     <!-- fieldset for signup -->
-    <fieldset class="signup_fieldset">
+    <fieldset id="PersonalInfo"    class="signup_fieldset">
         <legend>Personal Information</legend>
-        <form action="" method="POST">
-        <label for="first name">First Name:</label>
-        <input type="text" id="first name" name="first name" required placeholder="first name">
-        <label for="last name">Last Name:</label>
-        <input type="text" id="last name" name="last name" required placeholder="last name">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required placeholder="username" minlength="5" maxlength="30">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required placeholder="email">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required placeholder="password" minlength="10" maxlength="20">
-        <input type="submit" value="Start your Flow journey"> 
+        <form id="personal-info-form" action="" method="POST">
+            <label for="first name">First Name:</label>
+            <input id="first-name" type="text" id="first name" name="first name" required placeholder="first name"><br>
+            <label  for="last name">Last Name:</label>
+            <input id="last-name" type="text" id="last name" name="last name" required placeholder="last name"><br>
+            <label  for="username">Username:</label>
+            <input id="user-name" type="text" id="username" name="username" required placeholder="username" minlength="5" maxlength="30"><br>
+            <label  for="email">Email:</label>
+            <input id="email" type="email" id="email" name="email" required placeholder="email"><br>
+            <label  for="password">Password:</label>
+            <input id="pass" type="password" id="password" name="password" required placeholder="password" minlength="10" maxlength="20"><br>
+            <input type="submit" value="Start your Flow journey"> <br>
+            <input id="clear-btn" type="button" value="Clear"> <br>
+
         </form>
     </fieldset>
     </section>
+    <script src = "Interaction/signup.js"></script>
 </body>
 
 <footer class="footer">
