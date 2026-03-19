@@ -1,0 +1,100 @@
+.floating-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px); 
+    opacity: 0.5;
+    animation: floatAnimation 15s infinite alternate ease-in-out;
+}
+
+.tiffany {
+    background-color: var(--primary-tiffany);
+    width: 300px;
+    height: 300px;
+}
+
+.purple {
+    background-color: var(--primary-purple);
+    width: 400px;
+    height: 400px;
+}
+
+.bubble:nth-child(1) { top: 10%; left: 10%; }
+.bubble:nth-child(2) { bottom: 10%; right: 10%; animation-duration: 20s; }
+.bubble:nth-child(3) { top: 50%; left: 50%; animation-delay: -5s; }
+.bubble:nth-child(4) { bottom: 50%; right: 30%; animation-duration: 18s; }
+
+@keyframes floatAnimation {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(50px, 100px) scale(1.2); }
+}
+/* login styling  */
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    background-color:rgb(152, 248, 255);
+    text-align: center;
+    font-size: small;
+    color:#630cbf;;
+    font-family:'Times New Roman', Times, serif, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.login-div {
+    border-radius: 20px;
+    border:none;
+    padding: 30px;
+    background-color: #fcefff;
+    margin-bottom: 100px;
+}
+.login-div legend {
+    color: #630cbf;;
+    padding: 10px;
+    
+   
+  
+}
+.login-divlabel {
+    display: block;
+    margin-bottom: 5px;
+    color:var(--primary-purple);
+}
+.login-div input[type="text"],
+.login-div input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/* login submit button styling */
+.login-div input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin:10px 10px ;
+    background-color: #44067b;
+    color: rgb(136, 241, 241);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+ 
+    
+.logo {
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+
+}
+

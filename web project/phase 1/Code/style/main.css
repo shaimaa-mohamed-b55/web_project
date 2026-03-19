@@ -1,0 +1,49 @@
+/* this file contain the main features of Flow websit */
+:root{
+   --color-primary: #00e6d7;
+   --color-primary-dark:#48a39d;
+   --color-secodary: #630cbf;
+   --color-text: #333333;
+   --color-bg:#edf9fc;
+
+   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+
+   --radius-sm: 4px;
+   --radius-md: 8px;
+
+}
+@media(min-width:1024px){
+    .login{
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 32px;
+        /* background-color: cadetblue; */
+    }
+    .logo{
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+}
+
+@media(min-width:768px){
+    .login{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px 24px;
+    }
+}
+
+header, footer{
+    background-color:rgb(152, 248, 255);
+    text-align: center;
+    font-size: small;
+    color:#630cbf;;
+    font-family:'Times New Roman', Times, serif, Tahoma, Geneva, Verdana, sans-serif;
+}
+ footer{
+    text-decoration: none;    
+ }
+ footer:link {
+    color:#2b0157
+ }
