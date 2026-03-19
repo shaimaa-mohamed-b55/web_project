@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow-scial media plattform</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style\auth.css">
+</head>
+
+<body>
+<!-- ==========================
+           HEADER 
+=========================== -->
+<header>
+    <div>
+    <img class="logo" src="C:\Users\student\Desktop\CMPS350\web_project\media\images\flow_logo.png" alt="Flow Logo">
+    <h1>Create Share Explore</h1>
+    </div>
+</header>
+<!-- ==========================
+           NAVIGATION 
+=========================== -->
+<nav>
+    <div class="nav">
+<a href="index.html">Login</a>
+<a href="Register.html">Register</a>
+</div>
+</nav>
+<!-- ==========================
+             MAIN 
+=========================== -->
+<main>
+    <div class="floating-background">
+        <div class="bubble tiffany"></div>
+        <div class="bubble purple"></div>
+        <div class="bubble tiffany"></div>
+        <div class="bubble purple"></div>
+    </div>
+<section class="login">
+    <div class="login-div">
+    <div>
+        <legend>login to Flow</legend>
+        <form action="#" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required placeholder="username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="password" minlength="10" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{10,20}" title="password must contain upper case, lower case, number and special character"> 
+        </div> 
+     <input type="submit" value="Login">
+     <small>you don't have an account? <a href="Register.html">Register</a></small>
+
+    </form>
+   
+</div>
+</section>
+</main>
+
+<!-- ==========================
+            FOOTER
+     =========================== -->
+<footer>
+    <div class="footer">
+    <p>&copy; 2026 Flow. All rights reserved.</p>
+    <a href="index.html">Login</a>
+    <a href="Register.html">Register</a>
+</div>
+</footer>
+</body>
+</html>
