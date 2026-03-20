@@ -1,49 +1,82 @@
 /* this file contain the main features of Flow websit */
-:root{
-   --color-primary: #00e6d7;
-   --color-primary-dark:#48a39d;
-   --color-secodary: #630cbf;
-   --color-text: #333333;
-   --color-bg:#edf9fc;
+:root {
+    --color-primary: #00e6d7;
+    --color-primary-dark: #48a39d;
+    --color-secodary: #630cbf;
+    --color-text: #333333;
+    --color-bg: #edf9fc;
 
-   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
 
-   --radius-sm: 4px;
-   --radius-md: 8px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
 
 }
-@media(min-width:1024px){
-    .login{
+
+/* desktop screen */
+@media(min-width:1024px) {
+    .login {
         max-width: 960px;
         margin: 0 auto;
         padding: 32px;
         /* background-color: cadetblue; */
     }
-    .logo{
+
+    .logo {
         margin-bottom: 0px;
         margin-top: 0px;
     }
+
+    .footer {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: start;
+        max-width: 1000px;
+        margin: 3em auto;
+        text-align: left;
+        gap: 10em;
+    }
 }
 
-@media(min-width:768px){
-    .login{
+/* tablet screen */
+@media(min-width:768px) {
+    .login {
         flex-direction: row;
         justify-content: space-between;
         padding: 16px 24px;
     }
+
+    .footer {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        max-width: 720px;
+        margin: 3em auto;
+        text-align: left;
+        gap: 5em;
+        max-width: 720px;
+    }
 }
 
-header, footer{
-    background-color:rgb(152, 248, 255);
+body {
+  transition: all ease 250ms;
+  color: var(--text);
+  background: var(--bg);
+  font-size: 1.3em;
+}
+
+header,
+footer {
+    background-color: rgb(152, 248, 255);
     text-align: center;
     font-size: small;
-    color:#630cbf;;
-    font-family:'Times New Roman', Times, serif, Tahoma, Geneva, Verdana, sans-serif;
+    color: #630cbf;
+    ;
+    font-family: 'Times New Roman', Times, serif, Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1rem 1rem;
+    height: 0.1rem;
 }
- footer{
-    text-decoration: none;    
- }
- footer:link {
-    color:#2b0157
- }
+
+footer:link {
+    color: #2b0157
+}

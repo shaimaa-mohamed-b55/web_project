@@ -38,3 +38,22 @@ clear.addEventListener("click",function(){
     CreatedPostsList.length = 0;
     DisplayingPosts();
 })
+
+
+
+let counter = 0;
+const likeBtn = document.getElementById("like-btn");
+const likeCount = document.getElementById("like-count");
+
+likeBtn.addEventListener("click", function() {
+    counter++;
+    likeCount.textContent = counter;
+    // console.log(`Like count: ${counter}`); 
+    const starIcon = document.querySelector("#star-icon");
+    if (starIcon.src.includes("no-color-star.png")) {
+        starIcon.src = "../../media/icons/star.png";
+    } else {
+        starIcon.src = "../../media/icons/no-color-star.png";
+    }        
+    });
+

@@ -1,0 +1,15 @@
+/* tablet screen */
+@media (min-width:768px) {
+    .footer {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        max-width: 720px;
+        margin: 3em auto;
+        text-align: left;
+        gap: 5em;
+        max-width: 720px;
+
+    }
+}
+
+/* desktop screen */

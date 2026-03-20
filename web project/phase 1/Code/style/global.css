@@ -51,9 +51,7 @@
 body{
     background-color: cadetblue;
     transition: all ease 250ms;
-    /* color: var(--text); */
     background: var(--bg);
-    /* font-size: 1.3em; */
     margin: 0;
 }
 
@@ -87,20 +85,6 @@ body{
     flex-direction: column;
 
 }
-
-
-
-
-/* main{
-    font-family: 'Times New Roman', Times, serif;
-    border-radius: 5px;
-    padding: 50px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #abe9fc;
-} */
 
 
 h1,h2,h3{
@@ -162,9 +146,6 @@ section h2 {
     box-shadow: 0 10px 12px var(--gray);
     text-align: center;
 }
-
-
-
 
 #create-a-post{
     margin-top: 20px;
@@ -236,7 +217,9 @@ section h2 {
 /* page background color in login page */
 body {
     background-color: #ecf7f7;
+
 }
+
 
 button{
     border-radius: 5px;
@@ -244,14 +227,12 @@ button{
     background-color: bisque;
 }
 
-footer{
-    /* background-color: rgb(46, 38, 53); */
+/* footer{
     padding: 1rem 1rem;
     height: 0.1rem;
     color:var(--bg);
     text-align: center;
-
-}
+} */
 
 
 

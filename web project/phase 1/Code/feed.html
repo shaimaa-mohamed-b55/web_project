@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/global.css" />
-    <script src="interaction/feed.js"></script>
+    <link rel="stylesheet" href="style/main.css" />
+    <script src="js/feed.js" defer></script>
     <style type="text/css">
 
         .post {
@@ -30,12 +31,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: center;
 
         }
 
-        /* .like:hover {
+        .like button:hover {
             cursor: pointer;
-        } */
+        }
 
         .comment {
             width: auto;
@@ -71,7 +73,7 @@
 <body>
 
     <header>
-        <img src="media/images/flow_logo.png" alt="Flow Logo" width="500">
+        <img src="../../media/images/flow_logo.png" alt="Flow Logo" width="500">
     </header>
 
     <main>
@@ -82,15 +84,17 @@
 
         <div class="user-action">
             <div class="like">
-                <button>
-                    <img src="media\icons\no-color-star.png" alt="Like Icon" width="20">
+                <button id="like-btn">
+                    <img id="star-icon" src="../../media/icons/no-color-star.png" alt="Like Icon" width="20">
+                    <span>Like</span>
+                    <span class="like-counter" id="like-count">0</span>
                 </button>
             </div>
             
             <div class="comment">
                 <textarea placeholder="Comment here"></textarea>
                 <button>
-                    <img src="media\icons\send.png" alt="send"  width="20">
+                    <img src="../../media/icons/send.png" alt="send"  width="20">
                 </button>
             </div>
             
@@ -98,7 +102,6 @@
 
     </main>
     
-<script src="/Interaction/feed.js"></script>
 </body>
 
 <footer class="footer">
