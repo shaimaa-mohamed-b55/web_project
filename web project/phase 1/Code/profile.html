@@ -6,14 +6,23 @@
     <title>Profile</title>
     <link rel="stylesheet" href="style/global.css">
 </head>
+
+<!-- here, we have to add id to use them later in JS -->
 <body>
     <div class="header">
     <h1>Here is your profile</h1>
     </div>
     <section id="create-a-post">
     <h3>Create a post</h3>
+    <form id="creat-post-form">
     <textarea id="post-text" placeholder="type your post here"></textarea>
-    <button type="submit" name="create a post" >Create a post</button>
+    <button id="submit-btn" type="submit" name="create a post" >Submit</button>
+    <button id="clear-btn" type="clear" name="clear a post">Clear</button>
+    </form>
+    <div id="feed">
+        
+    </div>
+
     </section>
 </body>
 
@@ -21,5 +30,5 @@
     <p>&copy; 2026 Flow. All rights reserved.</p>
     <p>Thanks for using our website..!</p>
 </footer>
-
+<script src = "Interaction/CreatingPost.js"></script>
 </html>
