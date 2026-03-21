@@ -4,39 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flow-scial media plattform</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="style\auth.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/auth.css">
 </head>
 
 <body>
 <!-- ==========================
            HEADER 
 =========================== -->
-<header>
-    <div>
+<header class="header">  
     <img class="logo" src="media\images\flow_logo.png" alt="Flow Logo">
-    <h1>Create Share Explore</h1>
-    </div>
-</header>
+
 <!-- ==========================
            NAVIGATION 
 =========================== -->
-<nav>
-    <div class="nav">
+<nav class="nav">
 <a href="login.html">Login</a>
-<a href="signup.html">Register</a>
-</div>
+<a href="signup.html">Signup</a>
+</header>
 </nav>
 <!-- ==========================
              MAIN 
 =========================== -->
 <main>
-    <div class="floating-background">
-        <div class="bubble tiffany"></div>
-        <div class="bubble purple"></div>
-        <div class="bubble tiffany"></div>
-        <div class="bubble purple"></div>
-    </div>
 <section class="login">
     <div class="login-div">
     <div>
@@ -48,7 +38,7 @@
             <input type="password" id="password" name="password" required placeholder="password" minlength="10" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{10,20}" title="password must contain upper case, lower case, number and special character"> 
         </div> 
      <input type="submit" value="Login">
-     <small>you don't have an account? <a href="Register.html">Register</a></small>
+     <small>you don't have an account? <a href="signup.html">Signup</a></small>
 
     </form>
    
@@ -59,12 +49,10 @@
 <!-- ==========================
             FOOTER
      =========================== -->
-<footer>
-    <div class="footer">
+<footer class="footer">
     <p>&copy; 2026 Flow. All rights reserved.</p>
-    <a href="index.html">Login</a>
-    <a href="Register.html">Register</a>
-</div>
+    <a href="login.html">Login</a> 
+    <a href="signup.html">Signup</a>
 </footer>
 </body>
 </html>
