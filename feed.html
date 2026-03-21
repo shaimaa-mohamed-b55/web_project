@@ -77,28 +77,31 @@
     </header>
 
     <main>
-
+        <form id="create-post-form">
+                <textarea id="post" placeholder="write your ideas here.."></textarea>
+                <input type="button" value="submit" id="submit-btn">
+                <input type="button" value="clear" id="clear-btn">
+        </form>
+        
         <div id="feed" class="post">
         </div>
 
-        <div class="user-action">
-            <div class="like">
-                <button id="like-btn">
-                    <img id="star-icon" src="media/icons/no-color-star.png" alt="Like Icon" width="20">
-                    <span>Like</span>
-                    <span class="like-counter" id="like-count">0</span>
-                </button>
-            </div>
-            
-            <div class="comment">
-                <textarea placeholder="Comment here"></textarea>
-                <button>
-                    <img src="media/icons/send.png" alt="send"  width="20">
-                </button>
-            </div>
-            
-        </div>
 
+            <div class="user-action">
+                <div class="like">
+                    <button id="like-btn">
+                        <img id="star-icon" src="media/icons/no-color-star.png" alt="Like Icon" width="20">
+                        <span>Like</span>
+                        <span class="like-counter" id="like-count">0</span>
+                    </button>
+                </div>
+                
+                <div class="comment">
+                    <textarea placeholder="Comment here"></textarea>
+                    <button>
+                        <img src="media/icons/send.png" alt="send"  width="20">
+                    </button>
+                </div>
     </main>
     
 </body>
