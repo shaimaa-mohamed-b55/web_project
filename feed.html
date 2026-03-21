@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/global.css" />
     <link rel="stylesheet" href="style/main.css" />
-    <script src="js/feed.js" defer></script>
+    <script src="js\feed.js" defer></script>
     <style type="text/css">
 
         .post {
@@ -67,6 +67,10 @@
             cursor: pointer;
         }
 
+        #counter {
+            margin-left: 5px;
+        }
+
     </style>
 </head>
 
@@ -83,11 +87,15 @@
 
         <div class="user-action">
             <div class="like">
-                <button id="like-btn">
+                <!-- <button id="like-btn">
                     <img id="star-icon" src="media/icons/no-color-star.png" alt="Like Icon" width="20">
                     <span>Like</span>
                     <span class="like-counter" id="like-count">0</span>
+                </button> -->
+                <button id="like-btn">
+                    <img id="star-icon" src="media/icons/no-color-star.png" alt="Like Icon" width="20">
                 </button>
+                <label id="counter">0</label>
             </div>
             
             <div class="comment">
@@ -101,11 +109,11 @@
 
     </main>
     
+    <footer class="footer">
+        <p>&copy; 2026 Flow. All rights reserved.</p>
+        <p>Thanks for using our website..!</p>
+    </footer>
 </body>
 
-<footer class="footer">
-    <p>&copy; 2026 Flow. All rights reserved.</p>
-    <p>Thanks for using our website..!</p>
-</footer>
 
 </html>
