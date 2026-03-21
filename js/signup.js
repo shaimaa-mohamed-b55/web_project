@@ -86,10 +86,10 @@ const submitListener = document.querySelector("#submit-btn");
 submitListener.addEventListener("click",function(e){
     e.preventDefault();
     const firstname = document.querySelector("#first-name").value;
-    const lastname = document.querySelector("#last-name").value;
-    const username = document.querySelector("#user-name").value;
-    const email = document.querySelector("#email").value;
-    const password = document.querySelector("#pass").value;
+    const lastname =  document.querySelector("#last-name").value;
+    const username =  document.querySelector("#user-name").value;
+    const email    =  document.querySelector("#email").value;
+    const password =  document.querySelector("#pass").value;
     manager.add(firstname,lastname,username,email,password);
     document.querySelector("#personal-info-form").reset();
     window.location.href = "login.html"
