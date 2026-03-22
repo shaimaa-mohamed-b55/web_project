@@ -4,7 +4,9 @@
     --color-primary-dark: #48a39d;
     --color-secodary: #630cbf;
     --color-text: #333333;
-    --color-bg: linear-gradient( #00e6d7,#630cbf);
+    --color-bg: linear-gradient(#00e6d7, #630cbf);
+    --color-feed-bg: #fcefff;
+    --color-button: #08067b;
 
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
@@ -14,73 +16,122 @@
 
 }
 
-*{
-   box-sizing: border-box;
+* {
+    box-sizing: border-box;
 
 }
+
 /* desktop screen */
 @media(min-width:1024px) {
-    .login,.signup {
+
+    .login,
+    .signup {
         max-width: 960px;
         margin: 0 auto;
         padding: 32px;
         display: flex;
         justify-content: center;
-        
-   
     }
-}
+
+    .posts-background {
+        width: 60%;
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 30px;
+    }
+
+    .post{
+        width: 500px;
+        margin: 20px auto;
+    }
+
+        .user-action {
+        width: 500px;
+        gap: 20px;
+    }
     
+    .comment textarea {
+        width: 400px;
+    
+    }
+
+}
 
 
 /* tablet screen */
 @media(min-width:768px) {
-    .login,.signup {
+
+    .login,
+    .signup {
         flex-direction: row;
         justify-content: space-between;
         padding: 16px 24px;
     }
+
+    .posts-background {
+        width: 80%;
+        margin: 30px auto;
+        padding: 25px;
+    }
+
+    .post {
+        width: 90%;
+    }
+
+    .user-action {
+        width: 90%;
+        gap: 15px;
+    }
+
+    .comment textarea {
+        width: 350px;
+    }
+
 }
 
 
 body {
     display: flex;
     flex-direction: column;
-  transition: all ease 250ms;
-  color: var(--color-text);
-  background: linear-gradient( #00e6d7,#630cbf);
-  font-size: 1.3em;
-  min-height: 100vh;
-  margin: 0;
+    transition: all ease 250ms;
+    color: var(--color-text);
+    background: linear-gradient(#00e6d7, #630cbf);
+    font-size: 1.3em;
+    min-height: 100vh;
+    margin: 0;
 }
-main{
+
+main {
     flex: 1;
 }
 
-.header,.footer{
-    background-color:#06d7c9 ;
+.header,
+.footer {
+    background-color: #06d7c9;
     display: flex;
     align-items: center;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     padding: 0 20px;
-    width:100%;
+    width: 100%;
     height: 70px;
-    
+
 }
 
 
-.header img{
+.header img {
     width: 300px;
     justify-content: flex-start;
 }
 
 
-.nav,.footer {
+.nav,
+.footer {
     display: flex;
     gap: 20px;
 }
 
-.nav a,.footer a {
+.nav a,
+.footer a {
     text-decoration: none;
     color: #555;
     font-weight: 600;
@@ -89,14 +140,110 @@ main{
     padding: 8px 15px;
 }
 
-.nav a[href="signup.html"],a[href="login.html"] ,
-.footer a[href="signup.html"],a[href="login.html"]  {
-    background-color:var(--color-secodary);
+.nav a[href="signup.html"],
+a[href="login.html"],
+.footer a[href="signup.html"],
+a[href="login.html"] {
+    background-color: var(--color-secodary);
     color: var(--color-primary);
     border-radius: 5px;
 }
 
-.nav a:hover , .footer a:hover{
+.nav a:hover,
+.footer a:hover {
     color: #3f055b;
     transform: translateY(-2px);
 }
+
+/* ------- */
+
+.post {
+    width: 100%;
+    height: 200px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 5px;
+    border: grey solid 1px;
+    align-items: center;
+    justify-self: center;
+}
+
+.user-action {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.like {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.like button:hover {
+    cursor: pointer;
+}
+
+#counter {
+    margin-left: 10px;
+}
+
+.comment {
+    flex: 1;
+    /* width: auto; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+
+.comment textarea,
+#post {
+    flex-wrap: wrap;
+    border-radius: 5px;
+    color: none;
+    background-color: transparent;
+    width: 400px;
+    border-color: transparent;
+    margin-bottom: 10px;
+}
+
+
+.comment button:hover {
+    cursor: pointer;
+}
+
+#counter {
+    margin-left: 5px;
+}
+
+.posts-background {
+    border-radius: 10px;
+    border: none;
+    padding: 30px;
+    background-color: var(--color-feed-bg);
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 100px auto;
+    align-items: center;
+
+}
+
+#submit-btn,
+#clear-btn,
+#like-btn,
+#comment-btn {
+    background-color: var(--color-button);
+    color: var(--primary-color);
+    border-color: none;
+    border-radius: 5px;
+}
+
