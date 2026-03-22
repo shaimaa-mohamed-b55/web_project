@@ -1,11 +1,11 @@
 
-class PostManager{
-    constructor(){
+class PostManager {
+    constructor() {
         this.storgekey = "MyPosts";
-        const saved  = localStorage.getItem(this.storgekey);
-        this.posts = saved? JSON.parse(saved):[];
+        const saved = localStorage.getItem(this.storgekey);
+        this.posts = saved ? JSON.parse(saved) : [];
     }
-    addPost(username,post){
+    addPost(username, post) {
         const postContent = {
             username: username,
             post: post,
@@ -14,31 +14,31 @@ class PostManager{
         this.posts.unshift(postContent);
         this.save();
     }
-    getAll(){
+    getAll() {
         return this.posts;
     }
 
-    save(){
-        localStorage.setItem(this.storgekey,JSON.stringify(this.posts));
+    save() {
+        localStorage.setItem(this.storgekey, JSON.stringify(this.posts));
     }
-    
-    }
-    
+
+}
 
 
 
-const manager  = new PostManager();
 
-function DisplayingPosts(){
-    const feed  = document.querySelector("#feed");
-    if(manager.getAll().length === 0){
+const manager = new PostManager();
+
+function DisplayingPosts() {
+    const feed = document.querySelector("#feed");
+    if (manager.getAll().length === 0) {
         feed.innerHTML = `<p>No posts yet</p>`
         return;
     }
-    else{
+    else {
         feed.innerHTML = ""
         manager.getAll().forEach(t => {
-            feed.innerHTML+=`${t.post}`; 
+            feed.innerHTML += `${t.post}`;
         });
     }
 }
@@ -46,72 +46,114 @@ DisplayingPosts();
 
 
 const submitListener = document.querySelector("#submit-btn");
-submitListener.addEventListener("click",function(e){
+submitListener.addEventListener("click", function (e) {
     e.preventDefault();
     const createdPost = document.querySelector("#post").value;
     const username = localStorage.getItem("loggedInUser");
-    if(createdPost === "")return;
-    manager.addPost(username,createdPost);
+    if (createdPost === "") return;
+    manager.addPost(username, createdPost);
     DisplayingPosts();
     document.querySelector("#create-post-form").reset();
-    
+
 })
 const clearListener = document.querySelector("#clear-btn");
-clearListener.addEventListener("click",function(e){
+clearListener.addEventListener("click", function (e) {
     document.querySelector("#create-post-form").reset();
 })
-
-
 
 
 
 //--------------------------
 
-// counter for like button
+// LIKES & COMMENTS 
 
-document.addEventListener("DOMContentLoaded", function() {
-    let count = 0;
-    const likeBtn = document.getElementById("like-btn");
-    const likeCount = document.getElementById("like-count");
+document.addEventListener("DOMContentLoaded", function () {
+    let likeCount = 0;
+    let isLiked = false;
+    let comments = [];
+    const comtArea = document.getElementById("comments-area");
+
+
+    const likeContainer = document.getElementById("like-container");
+    const counter = document.getElementById("counter");
     const starIcon = document.querySelector("#star-icon");
-    if (likebtn){
-        likeBtn.onclick = function() {
-             count++;
-             counter.innerHTML=count;
-            if (starIcon && starIcon.src.includes("no-color-star.png")) {
+    const sendContainer = document.getElementById("send-container");
+    const commentArea = document.getElementById("comments-area");
+    const commentTextarea = document.querySelector(".comment textarea");
+    const commentList = document.getElementById("comments-list");
+    const sendIcon = document.getElementById("sendIcon");
+
+    if (likeContainer) {
+        likeContainer.addEventListener("click", function () {
+            if (!isLiked) {
+                isLiked = true;
+                likeCount++;
+                counter.textContent = likeCount;
                 starIcon.src = "media/icons/star.png";
-            } else if (starIcon) {
+            } else {
+                isLiked = false;
+                likeCount--;
+                counter.textContent = likeCount;
                 starIcon.src = "media/icons/no-color-star.png";
             }
-        };
-    } else {
-        console.log("Button not found!");
+
+        });
     }
-});
-    // // document.getElementById("like-btn").onclick = function() {
-    //     count++;
-    //     document.getElementById("counter").innerHTML = count;
-    //     const starIcon = document.querySelector("#star-icon");
-    //     if (starIcon.src.includes("no-color-star.png")) {
-    //         starIcon.src = "media/icons/star.png";
-    //     } else {
-    //         starIcon.src = "media/icons/no-color-star.png";
-    //     }
-    // });
-    // const likeBtn = document.getElementById("like-btn");
-    // const likeCount = document.getElementById("like-count");
 
-    // likeBtn.addEventListener("click", function() {
-    //     counter++;
-    //     likeCount.textContent = counter;
-    //     // console.log(`Like count: ${counter}`); 
-    //     const starIcon = document.querySelector("#star-icon");
-    //     if (starIcon.src.includes("no-color-star.png")) {
-    //         starIcon.src = "media/icons/star.png";
-    //     } else {
-    //         starIcon.src = "media/icons/no-color-star.png";
-    //     }        
-    //     });
+    // Send comment functionality
 
+    function addComment() {
+        const newComment = commentTextarea.value.length > 0;
+        if (newComment) {
+            sendIcon.src = "media/icons/coloured-send.png";
+        } else {
+            sendIcon.src = "media/icons/send.png";
+        }
 
+    }
 
+    if (commentTextarea) {
+        commentTextarea.addEventListener("input", addComment);
+    }
+
+    function displayComments() {
+        if (!commentList) return;
+        if (comments.length === 0) {
+            commentList.innerHTML = "<p>No comments yet</p>";
+        } else {
+            commentList.innerHTML = "";
+            for (let i = 0; i < comments.length; i++) {
+                const comment = comments[i];
+                commentList.innerHTML += `
+                    <div class="comment-item">
+                        <h5><strong>${comment.username}</strong> : ${comment.text}</h5>
+                    </div>
+                `;
+            }
+        }
+
+    }
+
+    if (sendContainer) {
+        sendContainer.addEventListener("click", function () {
+            const commentText = commentTextarea.value.trim();
+            if (commentText === "") return;
+
+            comments.push({
+                username: comments.length + 1,
+                text: commentText,
+                time: time()
+            });
+            commentTextarea.value = "";
+            addComment();
+
+            displayComments();
+
+        });
+
+        function time() {
+            const now = new Date();
+            return now.toLocaleTimeString();
+        }
+    }
+});            

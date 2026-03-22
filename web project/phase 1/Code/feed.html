@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Flow Feed</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/global.css" />
+    <link rel="stylesheet" href="style/main.css" />
+    <script src="js/feed.js" defer></script>
+    <style type="text/css">
+
+        .post {
+            width: 500px;
+            height: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 5px;
+            border: grey solid 1px;
+        }
+
+        .user-action {
+            width: 500px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .like {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+        }
+
+        .like button:hover {
+            cursor: pointer;
+        }
+
+        .comment {
+            width: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+        }
+        
+        .comment textarea {
+            border-radius: 5px;
+            color:none;
+            background-color: transparent;
+            width: 400px;
+            border-color: transparent;
+        }
+
+        .button {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px; 
+            border: none;
+            background: none;
+        }
+
+        .comment button:hover {
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <img class="logo" src="../../media/images/flow_logo.png" alt="Flow Logo">
+    </header>
+
+    <main>
+
+        <div class="posts-background">
+            <div class="post">
+                <p>This is a sample post.</p>
+            </div>
+
+            <div class="user-action">
+                <div class="like">
+                    <button id="like-btn">
+                        <img id="star-icon" src="../../media/icons/no-color-star.png" alt="Like Icon" width="20">
+                        <span>Like</span>
+                        <span class="like-counter" id="like-count">0</span>
+                    </button>
+                </div>
+                
+                <div class="comment">
+                    <textarea placeholder="Comment here"></textarea>
+                    <button>
+                        <img src="../../media/icons/send.png" alt="send"  width="20">
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+
+    </main>
+    
+</body>
+
+<footer class="footer">
+    <p>&copy; 2026 Flow. All rights reserved.</p>
+    <p>Thanks for using our website..!</p>
+</footer>
+
+</html>
