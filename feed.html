@@ -8,56 +8,48 @@
     <link rel="stylesheet" href="style/main.css">
     <script src="js\feed.js" defer></script>
     <style type="text/css">
-
-        #submit-btn, #clear-btn ,#like-btn ,#comment-btn {
-            background-color: var(--color-button);
-            color:var(--primary-color);
-            border-color: none;
-            border-radius: 5px;
-        }
-        
+       
     </style>
 </head>
 
 <body>
-    
+
     <header class="header">
         <img class="logo" src="../../media/images/flow_logo.png" alt="Flow Logo">
     </header>
-    
+
     <main>
-        
-    <div class="posts-background">
 
-        <form id="create-post-form">
-            <textarea id="post" placeholder="write your ideas here.."></textarea>
-            <input type="button" value="submit" id="submit-btn">
-            <input type="button" value="clear" id="clear-btn" >
-        </form>
+        <div class="posts-background">
 
-        <div id="feed" class="post">
-        </div>
+            <form id="create-post-form">
+                <textarea id="post" placeholder="write your ideas here.."></textarea>
+                <input type="button" value="submit" id="submit-btn">
+                <input type="button" value="clear" id="clear-btn">
+            </form>
 
-        <div class="user-action">
+            <div id="feed" class="post">
+            </div>
 
-            <div class="like">
-                <button id="like-btn">
+            <div class="user-action">
+                <div class="like-container" id="like-container">
                     <img id="star-icon" src="media/icons/no-color-star.png" alt="Like Icon" width="20">
-                </button>
-                <label id="counter">0</label>
+                    <span id="counter">0</span>
+                </div>
+
+                <div class="comment">
+                    <textarea id="comments-area" placeholder="Comment here" ></textarea>
+                    <div class="send-container" id="send-container">
+                        <img id ="sendIcon" src="media/icons/send.png" alt="send" width="20">
+                    </div>
+                </div>
             </div>
-            
-            <div class="comment">
-                <textarea placeholder="Comment here"></textarea>
-                <button id="comment-btn">
-                    <img src="media/icons/send.png" alt="send" width="20">
-                </button>
+
+            <div class="comments-section" id="comments-section">
+                <p>Comments</p>
+                <div id="comments-list"></div>
             </div>
-            
-                
-            
-        </div>    
-    </div>
+        </div>
 
     </main>
 

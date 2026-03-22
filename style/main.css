@@ -45,13 +45,13 @@
         margin: 20px auto;
     }
 
-        .user-action {
+    .user-action {
         width: 500px;
         gap: 20px;
     }
     
-    .comment textarea {
-        width: 400px;
+    #comments-area {
+        width: 600px;
     
     }
 
@@ -177,15 +177,15 @@ a[href="login.html"] {
     flex-wrap: wrap;
 }
 
-.like {
+.like-container {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
 
-.like button:hover {
+#star-icon:hover , #sendIcon:hover , #submit-btn :hover,
+#clear-btn:hover{
     cursor: pointer;
 }
 
@@ -195,33 +195,23 @@ a[href="login.html"] {
 
 .comment {
     flex: 1;
-    /* width: auto; */
     display: flex;
     align-items: center;
     gap: 10px;
-
 }
 
 
+
 .comment textarea,
-#post {
+#post , #comments-area{
     flex-wrap: wrap;
     border-radius: 5px;
     color: none;
     background-color: transparent;
-    width: 400px;
     border-color: transparent;
     margin-bottom: 10px;
 }
 
-
-.comment button:hover {
-    cursor: pointer;
-}
-
-#counter {
-    margin-left: 5px;
-}
 
 .posts-background {
     border-radius: 10px;
@@ -240,10 +230,13 @@ a[href="login.html"] {
 #submit-btn,
 #clear-btn,
 #like-btn,
-#comment-btn {
-    background-color: var(--color-button);
-    color: var(--primary-color);
+#sendIcon {
+    background-color: transparent;
+    /* color: var(--primary-color); */
     border-color: none;
     border-radius: 5px;
 }
 
+.comments-section{
+    align-self: flex-start;
+}

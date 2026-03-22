@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="style/global.css">
+    <link rel="stylesheet" href="style/main.css">
 </head>
 
 <!-- here, we have to add id to use them later in JS -->
+
 <body>
+    <header class="header">
+        <img class="logo" src="../../media/images/flow_logo.png" alt="Flow Logo">
+    </header>
+
     <div class="header">
-    <h1>Here is your profile</h1>
+        <h1>Here is your profile</h1>
     </div>
     <section id="create-a-post">
-    <h3>Create a post</h3>
-    <form id="creat-post-form">
-    <textarea id="post-text" placeholder="type your post here"></textarea>
-    <button id="submit-btn" type="submit" name="create a post" >Submit</button>
-    <button id="clear-btn" type="clear" name="clear a post">Clear</button>
-    </form>
-    <div id="feed">
-        
-    </div>
+        <h3>Create a post</h3>
+        <form id="creat-post-form">
+            <textarea id="post-text" placeholder="type your post here"></textarea>
+            <button id="submit-btn" type="submit" name="create a post">Submit</button>
+            <button id="clear-btn" type="clear" name="clear a post">Clear</button>
+        </form>
+        <div id="feed">
+
+        </div>
 
     </section>
+    <footer class="footer">
+        <p>&copy; 2026 Flow. All rights reserved.</p>
+        <p>Thanks for using our website..!</p>
+    </footer>
 </body>
 
-<footer class="footer">
-    <p>&copy; 2026 Flow. All rights reserved.</p>
-    <p>Thanks for using our website..!</p>
-</footer>
-<script src = "Interaction/CreatingPost.js"></script>
+<script src="Interaction/CreatingPost.js"></script>
+
 </html>
