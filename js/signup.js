@@ -1,37 +1,3 @@
-// form submit listner
-
-// const form = document.querySelector("#personal-info-form");
-// form.addEventListener("submit",function(e){
-//     e.preventDefault();
-//     const firstname = document.querySelector("#first-name").value;
-//     const lastname = document.querySelector("#last-name").value;
-//     const email = document.querySelector("#email").value;
-//     const pass = document.querySelector("#pass").value;
-
-//     accountList.push({
-//        FName : firstname,
-//        LName : lastname,
-//        Email : email,
-//        Pass : pass
-//     });
-
-//     localStorage.setItem("users",JSON.stringify(accountList));
-//     form.reset();
-
-//     window.location.href = "login_signup.html";
-// });
-
-// document.querySelector("clear-btn").addEventListener("click",function(){
-//     form.reset();
-// })
-
-
-// here , we will check if the user already have an account, 
-// otherwise , we will add this new user to localStorage
-
-
-
-
 class AccountManager{
     constructor(){
         this.storgekey = "myAccounts";
@@ -76,6 +42,8 @@ class SignUp{
             this.username = username;
             this.email = email;
             this.password = password;
+            this.following = [];
+            this.followers = [];
             this.createdAt = new Date().toLocaleString();
         }
     }

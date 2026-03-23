@@ -18,14 +18,25 @@
     <div class="header">
         <h1>Here is your profile</h1>
     </div>
+    <div>
+        <h2 id="profile-username"></h2>
+        <p id="profile-bio"></p>
+        <p>Followers: <span id="followers-count"></span></p>
+        <p>Following: <span id="following-count"></span></p>
+
+        <button id="edit-btn"  style="display:none;">Edit</button>
+        <button id="follow-btn" style="display:none;">Follow</button>
+
+        
+    </div>
     <section id="create-a-post">
         <h3>Create a post</h3>
-        <form id="creat-post-form">
+        <form id="create-post-form">
             <textarea id="post-text" placeholder="type your post here"></textarea>
             <button id="submit-btn" type="submit" name="create a post">Submit</button>
             <button id="clear-btn" type="clear" name="clear a post">Clear</button>
         </form>
-        <div id="feed">
+        <div id="profile-feed">
 
         </div>
 
@@ -36,6 +47,6 @@
     </footer>
 </body>
 
-<script src="Interaction/CreatingPost.js"></script>
+<script src="js/feed.js"></script>
 
 </html>
