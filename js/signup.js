@@ -32,8 +32,6 @@ class AccountManager{
         }
         return found;
     }
-
-
 }
 class SignUp{
         constructor(firstname,lastname,username,email,password){
