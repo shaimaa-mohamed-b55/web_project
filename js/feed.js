@@ -76,11 +76,11 @@ function deletePost(postId){
     renderPosts();
 }
 
-const submitListener = document.querySelector("#submit-btn");
+const submitListener = document.querySelector("#profile-submit-btn");
 if(submitListener){
     submitListener.addEventListener("click", function (e) {
     e.preventDefault();
-    const createdPost = document.querySelector("#post").value.trim();
+    const createdPost = document.querySelector("#profile-post-input").value.trim();
     if (createdPost === "") return;
     const username = localStorage.getItem("loggedInUser");
     postManager.addPost(username, createdPost);

@@ -72,7 +72,7 @@ updateFollowers();
 function renderPosts(){
     const posts = JSON.parse(localStorage.getItem("MyPosts")) || [];
     const UserPosts = posts.filter(t=>t.username === viewingProfile);
-    const profileFeed = document.querySelector("#profile-feed");
+    const profileFeed = document.querySelector("#profile-posts");
 
     if(UserPosts.length === 0){
         profileFeed.innerHTML = "<p>No Posts yet</p>";
@@ -88,9 +88,18 @@ function renderPosts(){
 
 }
 
-renderPosts();
+submitListener.addEventListener("click",function(e){
+    e.preventDefault();
+    const createdPost = postInput.value.trim();
+    if(createdPost === "")return;
 
-const CreatePostSection = document.querySelector("#create-a-post");
+    postManager.addPost(loggedInUser,createdPost);
+    renderPosts();
+    postInput.value = "";
+});
+
+
+const CreatePostSection = document.querySelector("#profile-create-a-post");
 if(viewingProfile !== loggedInUser){
     CreatePostSection.style.display = "none";
 }
