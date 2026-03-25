@@ -95,7 +95,7 @@ body {
     flex-direction: column;
     transition: all ease 250ms;
     color: var(--color-text);
-    background: linear-gradient(#00e6d7, #630cbf);
+    background:var(--color-bg);
     font-size: 1.3em;
     min-height: 100vh;
     margin: 0;
@@ -107,7 +107,7 @@ main {
 
 .header,
 .footer {
-    background-color: #06d7c9;
+    background-color:var(--color-primary);
     display: flex;
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
