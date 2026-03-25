@@ -8,42 +8,56 @@
     <link rel="stylesheet" href="style/main.css">
 </head>
 
-<!-- here, we have to add id to use them later in JS -->
 
 <body>
     <header class="header">
         <img class="logo" src="../../media/images/flow_logo.png" alt="Flow Logo">
     </header>
-
+    <main>
+        <a href="feed.html">Your Feed</a>
     <div class="header">
         <h1>Here is your profile</h1>
     </div>
+
     <div id="profile-mod">
         <h2 id="profile-username"></h2>
         <p id="profile-bio"></p>
-        <p>Followers: <span id="followers-count"></span></p>
-        <p>Following: <span id="following-count"></span></p>
+
+        <p>Followers:<span id="followers-count">0</span></p>
+        <p>followingss:<span id="following-count">0</span></p>
 
         <button id="edit-btn"  style="display:none;">Edit</button>
         <button id="follow-btn" style="display:none;">Follow</button> 
+
+        <div id="edit-form" style="display: none;">
+            <textarea id="bio-input" placeholder="write your bio.."></textarea>
+            <button id="save-btn">Save</button>
+        </div>
+
+        <input type="text" id="search-user" placeholder="find friends..">
+        <div id="search-results"></div>
     </div>
-    <section id="create-a-post">
+
+    <!-- i believe that this form should be the same for our creating a post in the feed as well,  -->
+     <!-- so anything would be published here , will automatically display there in the feed  -->
+    <section id="profil-create-post">
         <h3>Create a post</h3>
-        <form id="create-post-form">
-            <textarea id="post-text" placeholder="type your post here"></textarea>
-            <button id="submit-btn" type="submit" name="create a post">Submit</button>
-            <button id="clear-btn" type="clear" name="clear a post">Clear</button>
+        <form id="profile-create-post-form">
+            <textarea id="profit-post-input" placeholder="type your post here"></textarea>
+            <button id="profile-submit-btn" type="submit" name="create a post">Submit</button>
+            <!-- <button id="clear-btn" type="clear" name="clear a post">Clear</button> -->
         </form>
-        <div id="profile-feed">
+        <div id="profile-posts">
 
         </div>
 
     </section>
+    </main>
+</body>
     <footer class="footer">
         <p>&copy; 2026 Flow. All rights reserved.</p>
         <p>Thanks for using our website..!</p>
     </footer>
-</body>
 
 <script src="js/profile.js"></script>
 

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/main.css">
-    <script src="js\feed.js" defer></script>
+    <!-- <script src="js\feed.js" defer></script> -->
     <style type="text/css">
        
     </style>
@@ -20,21 +20,25 @@
 
 
     <main>
-        <a href="profile.html">Your profile</a>
+        <!-- i think for the profile here , we can't simply have a link for it -->
+        <!-- we have to have a button for it, where we can activate it when it's clicked , and we can save data into it -->
+        <!-- so we can connect this feed for the user , with it's profile account -->
+        <!-- <a href="profile.html">Your profile</a> -->
+
+        <input type="button" value="Profile" id="profile-btn">
         <div class="posts-background">
 
-            <form id="create-post-form">
-                <textarea id="post" placeholder="write your ideas here.."></textarea>
-                <input type="button" value="submit" id="submit-btn">
-                <input type="button" value="clear" id="clear-btn">
+            <form id="feed-create-post-form">
+                <textarea id="feed-post-input" placeholder="write your ideas here.."></textarea>
+                <input type="button" value="submit" id="feed-submit-btn">
+                <!-- <input type="button" value="clear" id="clear-btn"> -->
             </form>
-
-            <div id="profile-feed" class="post">
+            <div id="feed-posts" class="post">
             </div>
 
 
 
-            <div class="user-action">
+            <!-- <div class="user-action">
                 <div class="like-container" id="like-container">
                     <img id="star-icon" src="media/icons/no-color-star.png" alt="Like Icon" width="20">
                     <span id="counter">0</span>
@@ -46,13 +50,13 @@
                         <img id ="sendIcon" src="media/icons/send.png" alt="send" width="20">
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="comments-section" id="comments-section">
+            <!-- <div class="comments-section" id="comments-section">
                 <p>Comments</p>
                 <div id="comments-list"></div>
             </div>
-        </div>
+        </div> -->
 
     </main>
 

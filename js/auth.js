@@ -1,7 +1,7 @@
 // Account manager class
 class AccountManager{
     constructor(){
-        this.storgekey = "myAccounts";
+        this.storgekey = "allUsers";
         const saved = localStorage.getItem(this.storgekey);
         this.accounts = saved? JSON.parse(saved):[];
     }
@@ -43,7 +43,7 @@ class SignUp{
             this.username = username;
             this.email = email;
             this.password = password;
-            this.following = [];
+            this.followings = [];
             this.followers = [];
             this.createdAt = new Date().toLocaleString();
         }
@@ -95,7 +95,7 @@ if (loginForm) {
         const password = passwordInp.value;
         const userAccount = manager.login(username, password);
         if (userAccount) {
-            localStorage.setItem("currentUser", JSON.stringify(userAccount));
+            localStorage.setItem("loggedInUser", userAccount.username);
             window.location.href = "feed.html";
         } else {
             errorMsg.textContent = "Username or password incorrect!";
