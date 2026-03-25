@@ -31,13 +31,12 @@
     <div class="login-div">
     <div>
         <legend>login to Flow</legend>
-        <form  id="login-form"action="" method="POST">
+        <form  id="login-form" action="" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required placeholder="username">
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required placeholder="password" minlength="10" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{10,20}" title="password must contain upper case, lower case, number and special character"> 
-        </div> 
-     <input type="submit" value="Login">
+            <input type="password" id="password" name="password" required placeholder="password" >
+     <input type="submit" id="login-btn" value="Login">
      <small>you don't have an account? <a href="signup.html">Signup</a></small>
 
     </form>
@@ -54,5 +53,8 @@
     <a href="login.html">Login</a> 
     <a href="signup.html">Signup</a>
 </footer>
+
+<script src="js/auth.js"></script>
+
 </body>
 </html>
