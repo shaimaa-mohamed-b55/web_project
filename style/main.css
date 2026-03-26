@@ -39,9 +39,14 @@
 /* always start by the modile display , then override it for larger screens like desktop */
 
 .posts-background {
-    margin: 1rem auto;
-    padding: 1rem;
-    display: grid;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: var(--color-feed-bg);
+    margin: 40px auto 100px auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    gap:20px;
 }
 
 .posts-background:has(#profile-mod){
@@ -87,6 +92,9 @@
         gap: 8px;
     }
 
+    .posts-background:has(.posts-background:has(#profile-mod)){
+        margin: 1rem;
+    }
 
 
     .user-action {
