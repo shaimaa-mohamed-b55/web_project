@@ -38,3 +38,18 @@
     border: 2px solid rgb(248, 219, 241);
 
 }
+.header a{
+    background-color: var(--color-secodary);
+    color: var(--color-primary);
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    font-weight: bold;
+      
+}
+.header a:hover{
+    color: #3f055b;
+    transform: translateY(-2px);
+}
