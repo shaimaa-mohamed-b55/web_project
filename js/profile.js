@@ -143,7 +143,7 @@ function renderPosts(){
     }
     else{
         profileFeed.innerHTML = UserPosts.map(t=> 
-       `     <div class="post-card">
+       `     <div class="post">
                 <p>${t.post}</p>
                 <span>${t.createdAt}</span>
             </div>

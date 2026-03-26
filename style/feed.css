@@ -6,19 +6,19 @@
     grid-area: feed-posts;
 }
 
-.posts-background {
-    
-}
-.post {
+
+#feed-create-post-form{
     width: 100%;
-    height: 200px;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 5px;
-    border: grey solid 1px;
-    align-items: center;
-    justify-self: center;
 }
+
+#feed-posts{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
 
 .user-action {
     width: 100%;
@@ -65,19 +65,7 @@
 }
 
 
-.posts-background {
-    border-radius: 10px;
-    border: none;
-    padding: 30px;
-    background-color: var(--color-feed-bg);
-    margin-bottom: 100px;
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: 100px auto;
-    align-items: center;
 
-}
 
 #submit-btn,
 #clear-btn,

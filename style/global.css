@@ -95,12 +95,7 @@ h1,h2,h3{
     flex-wrap: nowrap;
 }
 
-.posts-background{
-    background-color: bisque; 
-    padding: 50px;
-    /* border-color: rgb(160, 99, 8); */
-    border-radius: 5px;
-}
+
 
 header{
     padding: 25px;

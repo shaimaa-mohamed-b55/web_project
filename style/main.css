@@ -1,4 +1,4 @@
-this file contain the main features of Flow websit
+/* this file contain the main features of Flow websit */
 :root {
     --color-primary: #00e6d7;
     --color-primary-dark: #48a39d;
@@ -22,32 +22,36 @@ this file contain the main features of Flow websit
 }
 
 
+.post>*{
+    margin: 0;
+}
 
+.post h4{
+    color: #555;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.post p{
+    color: antiquewhite;
+    line-height: 1.4;
+}
 /* always start by the modile display , then override it for larger screens like desktop */
 
-.posts-background {
-    border-radius: 10px;
-    padding: 1rem;
-    width: 95%;
-    background-color: var(--color-feed-bg);
-    margin-bottom: 100px;
-    margin: 2rem auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-        "profile-mod"
-        "profile-create-post";
 
-}
-main{
-    margin: 5rem auto;
+.posts-background{
+    margin: 1rem auto;
     padding: 1rem;
     width: 100%;
-    /* display: grid;
+    display: grid;
+}
+
+.posts-background:has(#profile-mod){
     grid-template-columns: 1fr;
     grid-template-areas: 
-    "profile-mod",
-    "profile-create-post" */
+    "profile-mod"
+    "profile-create-post";
+
 }
     
 
@@ -73,8 +77,18 @@ main{
     }
 
     .post {
-        width: 90%;
+        width: 100%;
+        padding: 15px;
+        border-radius: 12px;
+        border: 2px solid var(--color-feed-bg);
+        background-color: bisque;
+
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
+
+
 
     .user-action {
         width: 90%;
@@ -85,7 +99,7 @@ main{
         width: 350px;
     }
 
-    main{
+    .posts-background{
         padding: 2rem;
         grid-template-columns: 1fr 2fr;
         grid-template-areas: 
@@ -131,13 +145,10 @@ main{
     
     }
 
-    main{
+    .posts-background:has(#profile-mod){
         grid-template-columns: 1fr 3fr;
-        max-width: 1200px;
-        margin: 0 auto;
-        gap: 30px;
-        padding: 3rem;
-        /* justify-content: space-between; */
+        grid-template-areas: 
+            "profile-mod profile-create-post";
     }
 }
 
@@ -210,17 +221,17 @@ a[href="login.html"] {
 }
 
 /* ------- */
-
+/* 
 .post {
     width: 100%;
-    height: 200px;
+    /* height: 200px; */
     margin: 20px auto;
     padding: 15px;
     border-radius: 5px;
     border: grey solid 1px;
     align-items: center;
     justify-self: center;
-}
+} */
 
 .user-action {
     width: 100%;
@@ -267,7 +278,18 @@ a[href="login.html"] {
 }
 
 
+.posts-background {
+    border-radius: 10px;
+    padding: 1rem;
+    width: 95%;
+    background-color: var(--color-feed-bg);
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+    "profile-mod  profile-create-post";
 
+}
 
 #submit-btn,
 #clear-btn,
@@ -282,4 +304,3 @@ a[href="login.html"] {
 .comments-section{
     align-self: flex-start;
 }
-
