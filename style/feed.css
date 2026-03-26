@@ -1,23 +1,12 @@
-
-
-
-
-
-#feed-posts{
-    grid-area: feed-posts;
+.post {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.posts-background{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-        "feed-create-post-form"
-        "feed-posts";
-    gap: 20px;
+    height: 200px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 5px;
+    border: grey solid 1px;
+    align-items: center;
+    justify-self: center;
 }
 
 .user-action {
@@ -58,13 +47,26 @@
 #post , #comments-area{
     flex-wrap: wrap;
     border-radius: 5px;
-    color: inherit;
+    color: none;
+    background-color: transparent;
     border-color: transparent;
     margin-bottom: 10px;
 }
 
 
-
+.posts-background {
+    border-radius: 10px;
+    border: none;
+    padding: 30px;
+    background-color: var(--color-feed-bg);
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 100px auto;
+    align-items: center;
+    gap:20px;
+}
 
 #submit-btn,
 #clear-btn,
@@ -72,10 +74,10 @@
 #sendIcon {
     background-color: transparent;
     /* color: var(--primary-color); */
+    border-color: none;
     border-radius: 5px;
 }
 
 .comments-section{
     align-self: flex-start;
 }
-
