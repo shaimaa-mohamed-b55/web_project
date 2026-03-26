@@ -1,8 +1,8 @@
 // Account manager class
 class AccountManager{
     constructor(){
-        this.storgekey = "allUsers";
-        const saved = localStorage.getItem(this.storgekey);
+        this.storagekey = "allUsers";
+        const saved = localStorage.getItem(this.storagekey);
         this.accounts = saved? JSON.parse(saved):[];
     }
 
@@ -22,7 +22,7 @@ class AccountManager{
         return this.accounts;
     }
     save(){
-        localStorage.setItem(this.storgekey,JSON.stringify(this.accounts));
+        localStorage.setItem(this.storagekey,JSON.stringify(this.accounts));
     }
 
     login(username,password){

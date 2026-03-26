@@ -2,12 +2,9 @@
   /* --rose-main: #be123c;
   --rose-soft: #ffe4e6; */
 
-  --bg: cadetblue;
-  /* --text: #881337;
-  --color-link: #e11d48; */
-/* text color */
+--bg: cadetblue;
 --purp: #44067b;
---gray: gray;
+/* --gray: gray; */
 
 }
 
@@ -38,15 +35,6 @@
     padding: 0;
 }
 
-/* try to add more of flexbox and grids  */
-/* .header{
-    background-color: bisque;
-    color: rgb(155, 106, 43);
-    margin-top: 5px;
-    border-radius: 5px;
-    padding: 20px;
-
-} */
 
 body{
     background-color: cadetblue;
@@ -106,7 +94,7 @@ header{
     padding: 20px;
     margin: 0px;
     color: var(--purp);
-    background-color: var(--bg);
+    background-color: transparent;
     width: 100%;
 }
 
@@ -145,10 +133,9 @@ section h2 {
 #profile-create-a-post{
     margin-top: 20px;
     color: cadetblue;
-    background-color: bisque;
     padding: 30px;
     flex-direction: row;
-    ms-flex-align: center;
+    /* ms-flex-align: center; */
 }
 
 /*loging fieldset styling */
