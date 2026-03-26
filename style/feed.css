@@ -65,7 +65,7 @@
     width: 60%;
     margin: 100px auto;
     align-items: center;
-
+    gap:20px;
 }
 
 #submit-btn,
@@ -81,4 +81,3 @@
 .comments-section{
     align-self: flex-start;
 }
-

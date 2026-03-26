@@ -29,7 +29,7 @@
 #profile-mod .profile-username{
     color: cadetblue;
     padding-top: 2rem;
-    background-color: pink;
+    background-color: var();
 }
 
 #profile-mod:hover{

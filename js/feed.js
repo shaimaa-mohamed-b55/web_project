@@ -4,8 +4,8 @@ if(!loggedInUser) window.location.href = "login.html";
 
 class PostManager {
     constructor() {
-        this.storgekey = "MyPosts";
-        const saved = localStorage.getItem(this.storgekey);
+        this.storagekey = "MyPosts";
+        const saved = localStorage.getItem(this.storagekey);
         this.posts = saved ? JSON.parse(saved) : [];
     }
 
@@ -27,7 +27,7 @@ class PostManager {
     }
 
     save() {
-        localStorage.setItem(this.storgekey, JSON.stringify(this.posts));
+        localStorage.setItem(this.storagekey, JSON.stringify(this.posts));
     }
 
     deletePost(postId){
@@ -69,6 +69,7 @@ function submitComment(postId){
     const text = textarea? textarea.value.trim() : "";
     if(!text || !loggedInUser) return;
     postManager.addComment(postId,loggedInUser,text);
+    textarea.value = "";
 renderFeedPosts();
 }
 
@@ -124,6 +125,7 @@ function renderFeedPosts(){
                     <button onClick="toggleLike('${post.id}')">
                         ${liked ? `<img src="media/icons/star.png" width="20"> `: `<img src="media/icons/no-color-star.png" width="20">`}
                     </button>
+                    <span>${post.likes.length}likes</span>
                     ${isOwnder? `<button onclick="deletePost('${post.id}')">Delete</button>`: ""}
                 </div>
                 <div class="comments-section">${commentsHTML}</div>
@@ -168,7 +170,7 @@ profileBtn.addEventListener("click",function(){
     const loggedInUser = localStorage.getItem("loggedInUser");
     if(!loggedInUser) return;
 
-    localStorage.setItem("viewingFeed",loggedInUser);
+    localStorage.setItem("viewingProfile",loggedInUser);
     window.location.href = "profile.html";
 
 });

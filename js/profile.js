@@ -1,8 +1,8 @@
 
 class PostManager {
     constructor() {
-        this.storgekey = "MyPosts";
-        const saved = localStorage.getItem(this.storgekey);
+        this.storagekey = "MyPosts";
+        const saved = localStorage.getItem(this.storagekey);
         this.posts = saved ? JSON.parse(saved) : [];
     }
 
@@ -24,7 +24,7 @@ class PostManager {
     }
 
     save() {
-        localStorage.setItem(this.storgekey, JSON.stringify(this.posts));
+        localStorage.setItem(this.storagekey, JSON.stringify(this.posts));
     }
 
     deletePost(postId){
@@ -143,7 +143,7 @@ function renderPosts(){
     }
     else{
         profileFeed.innerHTML = UserPosts.map(t=> 
-       `     <div class="post-card">
+       `     <div class="post">
                 <p>${t.post}</p>
                 <span>${t.createdAt}</span>
             </div>
@@ -173,63 +173,51 @@ if(viewingProfile !== loggedInUser){
     CreatePostSection.style.display = "none";
 }
 
-
-
-
 const editBtn = document.querySelector("#edit-btn");
 const followBtn = document.querySelector("#follow-btn");
-followBtn.addEventListener("click",function(){
-    const allUsers = JSON.parse(localStorage.getItem("allUsers")) || [];
-    const current = allUsers.find(u=>u.username === loggedInUser);
-    const target = allUsers.find(u=>u.username === viewingProfile);
-
-    if(!current || !target) return;
-
-    const isFollowing = current.followings.includes(viewingProfile);
-
-    if(isFollowing){
-        current.followings = current.followings.filter(u=>u !== viewingProfile);
-        target.followers = target.followers.filter(u=>u !== loggedInUser);
-        followBtn.textContent = "Follow";
-    }
-    else{
-        current.followings.push(viewingProfile);
-        target.followers.push(loggedInUser);
-        followBtn.textContent = "Unfollow";
-    }
-
-    localStorage.setItem("allUsers", JSON.stringify(allUsers));
-    updateFollowers();
-
-})
-
 
 if(viewingProfile === loggedInUser){
     editBtn.style.display = "block";
     followBtn.style.display = "none";
-}
-else{   
+} else {
     editBtn.style.display = "none";
     followBtn.style.display = "block";
 
     const allUsers = JSON.parse(localStorage.getItem("allUsers")) || [];
-    const current = allUsers.find(u=>u.username === loggedInUser);
-    if(current && current.followings.includes(viewingProfile)){
+    const current = allUsers.find(u => u.username === loggedInUser);
+
+    followBtn.textContent = current && current.followings.includes(viewingProfile) 
+        ? "Unfollow" : "Follow";
+
+ 
+    followBtn.addEventListener("click", function(){
+    const allUsers = JSON.parse(localStorage.getItem("allUsers")) || []; // ✅ fresh read
+    const current = allUsers.find(u => u.username === loggedInUser);
+    const target = allUsers.find(u => u.username === viewingProfile);
+    if(!current || !target) return;
+
+    const isFollowing = current.followings.includes(viewingProfile);
+    if(isFollowing){
+        current.followings = current.followings.filter(u => u !== viewingProfile);
+        target.followers = target.followers.filter(u => u !== loggedInUser);
+        followBtn.textContent = "Follow";
+    } else {
+        current.followings.push(viewingProfile);
+        target.followers.push(loggedInUser);
         followBtn.textContent = "Unfollow";
     }
-    else{
-        followBtn.textContent = "Follow";
-    }
-}
+    localStorage.setItem("allUsers", JSON.stringify(allUsers));
+    updateFollowers();
+});
 
-editBtn.addEventListener("click",function(){
+}
+editBtn.addEventListener("click", function(){
     const editForm = document.querySelector("#edit-form");
     const bioInput = document.querySelector("#bio-input");
     bioInput.value = userAccount.bio || "";
     editForm.style.display = "block";
     editBtn.style.display = "none";
 });
-
 
 
 const feedBtn = document.querySelector("#feed-btn");
@@ -242,7 +230,6 @@ feedBtn.addEventListener("click",function(){
     window.location.href = "feed.html"
 })
 
-renderPosts();
 
 document.querySelector("#save-btn").addEventListener("click",function(){
     const bioInput = document.querySelector("#bio-input");
@@ -257,40 +244,29 @@ document.querySelector("#save-btn").addEventListener("click",function(){
 });
 
 
-// followBtn.addEventListener("click",function(){
-//     profile.addFollowing(viewingProfile);
 
-//     const target = AllProfile.find(u=>u.username === viewingProfile);
-//     if(target && !target.followers.includes(loggedInUser)){
-//         target.followers.push(loggedInUser);
-//         localStorage.setItem("allUsers", JSON.stringify(AllProfile));
-//     }
-//     updateFollowers();
-//     followBtn.textContent = "Unfollow";
-// });
 
 const searchInput = document.querySelector("#search-user");
 const resultsDiv = document.querySelector("#search-results");
 
-searchInput.addEventListener("input",function(){
+searchInput.addEventListener("input", function(){
     const query = this.value.toLowerCase();
     const allUsers = JSON.parse(localStorage.getItem("allUsers")) || [];
+    const current = allUsers.find(p => p.username === loggedInUser); // ✅ defined once here
 
-    const filtered = allUsers.filter(u=>
-        u.username.toLowerCase().includes(query)&&u.username !== loggedInUser
+    const filtered = allUsers.filter(u =>
+        u.username.toLowerCase().includes(query) && u.username !== loggedInUser
     );
-    resultsDiv.innerHTML = filtered.map(u=> {
-        const allUser = JSON.parse (localStorage.getItem("allUsers"))||[];
-        const current = allUser.find( p => p.username === loggedInUser);
-        const isFollowing = current && current.followings.includes(u.username);
+    resultsDiv.innerHTML = filtered.map(u => {
+        const isFollowing = current && current.followings.includes(u.username); // ✅ uses outer current
         return `
         <div class="user-result">
             <span>@${u.username}</span>
-            <button onClick= "followUser('${u.username}',this)">
-                ${isFollowing? "Unfollow" : "Follow"}
+            <button onClick="followUser('${u.username}',this)">
+                ${isFollowing ? "Unfollow" : "Follow"}
             </button>
         </div>`;
-}).join("");
+    }).join("");
 });
 
 
