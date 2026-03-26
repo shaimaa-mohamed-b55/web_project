@@ -231,6 +231,19 @@ editBtn.addEventListener("click",function(){
 });
 
 
+
+const feedBtn = document.querySelector("#feed-btn");
+feedBtn.addEventListener("click",function(){
+
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if(!loggedInUser) return;
+
+    localStorage.setItem("viewingProfile",loggedInUser);
+    window.location.href = "feed.html"
+})
+
+renderPosts();
+
 document.querySelector("#save-btn").addEventListener("click",function(){
     const bioInput = document.querySelector("#bio-input");
     userAccount.bio = bioInput.value;

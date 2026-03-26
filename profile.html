@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <link rel="stylesheet" href="style/profile.css">
+    <!-- <link rel="stylesheet" href="style/main.css"> -->
+         <link rel="stylesheet" href="style/mainDraft.css">
+
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/profile.css">
     
@@ -17,43 +21,48 @@
          <a href="feed.html">Your Feed</a>
     </header>
     <main>
+        <a href="feed.html">Your Feed</a>
     <div class="profile">
         <h1>Here is your profile</h1>
-    </div>
-<!-- I should let the user to modify his bio -->
-    <div id="profile-mod">
-        <h2 id="profile-username"></h2>
-        <p id="profile-bio"></p>
-
-        <p>Followers:<span id="followers-count">0</span></p>
-        <p>followingss:<span id="following-count">0</span></p>
-
-        <button id="edit-btn"  style="display:none;">EditBio</button>
-        <button id="follow-btn" style="display:none;">Follow</button> 
-
-        <div id="edit-form" style="display: none;">
-            <textarea id="bio-input" placeholder="write your bio.."></textarea>
-            <button id="save-btn">Save</button>
         </div>
+        <div class="posts-background">
+<!-- I should let the user to modify his bio -->
+        <div id="profile-mod">
+            <h1 id="profile-username"></h1>
+            <h2 id="profile-bio"></h2>
+            <button id="edit-btn"  style="display:none;">EditBio</button>
 
-        <input type="text" id="search-user" placeholder="find friends..">
-        <div id="search-results"></div>
-    </div>
+            <h3>Followers:<span id="followers-count">0</span></h3>
+            <h3>followingss:<span id="following-count">0</span></h3>
+
+            <button id="follow-btn" style="display:none;">Follow</button> 
+
+            <div id="edit-form" style="display: none;">
+                <textarea id="bio-input" placeholder="write your bio.."></textarea>
+                <button id="save-btn">Save</button>
+
+            </div>
+
+            <input type="text" id="search-user" placeholder="find friends..">
+            <div id="search-results"></div><br>
+            <input type="button" value="Feed" id="feed-btn">
+
+        </div>
 
     <!-- i believe that this form should be the same for our creating a post in the feed as well,  -->
      <!-- so anything would be published here , will automatically display there in the feed  -->
-    <section id="profile-create-post">
-        <h3>Create a post</h3>
-        <form id="profile-create-post-form">
-            <textarea id="profile-post-input" placeholder="type your post here"></textarea>
-            <button id="profile-submit-btn" type="submit" name="create a post">Submit</button>
-            <!-- <button id="clear-btn" type="clear" name="clear a post">Clear</button> -->
-        </form>
-        <div id="profile-posts">
+        <section id="profile-create-post">
+            <h3>Create a post</h3>
+            <form id="profile-create-post-form">
+                <textarea id="profile-post-input" placeholder="type your post here"></textarea>
+                <button id="profile-submit-btn" type="submit" name="create a post">Submit</button>
+                <!-- <button id="clear-btn" type="clear" name="clear a post">Clear</button> -->
+            </form>
+            <div id="profile-posts">
 
-        </div>
+            </div>
 
-    </section>
+        </section>
     </main>
 </body>
   <footer class="footer">

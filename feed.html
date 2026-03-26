@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/profile.css">
+    <link rel="stylesheet" href="style/feed.css">
      <link rel="stylesheet" href="style/feed.css">
 
     <!-- <script src="js\feed.js" defer></script> -->
@@ -15,14 +17,10 @@
 </head>
 
 <body>
-
     <header class="header">
         <img class="logo" src="media/images/flow_logo.png" alt="Flow Logo">
     </header>
-
-
     <main>
-
         <input type="button" value="Profile" id="profile-btn">
         <div class="posts-background">
 
@@ -31,10 +29,16 @@
                 <input type="button" value="submit" id="feed-submit-btn">
                 <!-- <input type="button" value="clear" id="clear-btn"> -->
             </form>
-            <div id="feed-posts" class="post">
-            </div>
-
+            <div id="feed-posts" class="post"></div>
+        </div>    
     </main>
+
+<footer class="footer">
+    <p>&copy; 2026 Flow. All rights reserved.</p>
+    <p>Thanks for using our website..!</p>
+</footer>
+
+<script src="js/feed.js"></script>
 
   <footer class="footer">
     <p>&copy; 2026 Flow. All rights reserved.</p>
@@ -42,5 +46,6 @@
     <a href="signup.html">Signup</a>
 </footer>
 </body>
-<script src="js/feed.js"></script>
 </html>
+
+

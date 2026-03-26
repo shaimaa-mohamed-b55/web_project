@@ -1,4 +1,4 @@
-this file contain the main features of Flow websit
+/* this file contain the main features of Flow websit */
 :root {
     --color-primary: #00e6d7;
     --color-primary-dark: #48a39d;
@@ -25,29 +25,16 @@ this file contain the main features of Flow websit
 
 /* always start by the modile display , then override it for larger screens like desktop */
 
-.posts-background {
-    border-radius: 10px;
+
+.posts-background{
+    margin: 1rem auto;
     padding: 1rem;
-    width: 95%;
-    background-color: var(--color-feed-bg);
-    margin-bottom: 100px;
-    margin: 2rem auto;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: 
-        "profile-mod"
-        "profile-create-post";
-
-}
-main{
-    margin: 5rem auto;
-    padding: 1rem;
-    width: 100%;
-    /* display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
     "profile-mod",
-    "profile-create-post" */
+    "profile-create-post"
 }
     
 
@@ -85,7 +72,7 @@ main{
         width: 350px;
     }
 
-    main{
+    .posts-background{
         padding: 2rem;
         grid-template-columns: 1fr 2fr;
         grid-template-areas: 
@@ -131,7 +118,7 @@ main{
     
     }
 
-    main{
+    .posts-background{
         grid-template-columns: 1fr 3fr;
         max-width: 1200px;
         margin: 0 auto;
@@ -267,7 +254,18 @@ a[href="login.html"] {
 }
 
 
+.posts-background {
+    border-radius: 10px;
+    padding: 1rem;
+    width: 95%;
+    background-color: var(--color-feed-bg);
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+    "profile-mod  profile-create-post";
 
+}
 
 #submit-btn,
 #clear-btn,
@@ -282,4 +280,3 @@ a[href="login.html"] {
 .comments-section{
     align-self: flex-start;
 }
-
