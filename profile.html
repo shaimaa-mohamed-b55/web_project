@@ -5,20 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <link rel="stylesheet" href="style/profile.css">
     <link rel="stylesheet" href="style/main.css">
 </head>
 
 
 <body>
     <header class="header">
-        <img class="logo" src="../../media/images/flow_logo.png" alt="Flow Logo">
+        <img class="logo" src="media/images/flow_logo.png" alt="Flow Logo">
     </header>
     <main>
         <a href="feed.html">Your Feed</a>
-    <div class="header">
+    <div class="profile">
         <h1>Here is your profile</h1>
     </div>
-
+<!-- I should let the user to modify his bio -->
     <div id="profile-mod">
         <h2 id="profile-username"></h2>
         <p id="profile-bio"></p>
@@ -26,7 +27,7 @@
         <p>Followers:<span id="followers-count">0</span></p>
         <p>followingss:<span id="following-count">0</span></p>
 
-        <button id="edit-btn"  style="display:none;">Edit</button>
+        <button id="edit-btn"  style="display:none;">EditBio</button>
         <button id="follow-btn" style="display:none;">Follow</button> 
 
         <div id="edit-form" style="display: none;">

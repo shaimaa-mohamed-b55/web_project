@@ -24,8 +24,8 @@
 /* desktop screen */
 @media(min-width:1024px) {
 
-    .login,
-    .signup {
+    .login
+    /* ,.signup*/{
         max-width: 960px;
         margin: 0 auto;
         padding: 32px;
@@ -61,12 +61,17 @@
 /* tablet screen */
 @media(min-width:768px) {
 
-    .login,
-    .signup {
+    .login{
         flex-direction: row;
         justify-content: space-between;
         padding: 16px 24px;
     }
+
+    /* .signup{
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 16px 24px;
+    } */
 
     .posts-background {
         width: 80%;
@@ -240,3 +245,4 @@ a[href="login.html"] {
 .comments-section{
     align-self: flex-start;
 }
+

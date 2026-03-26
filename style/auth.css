@@ -1,10 +1,8 @@
-
 .login,.signup{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 
 .login-div ,.signup-div{
     border-radius: 20px;
@@ -28,7 +26,9 @@
     text-align: center;
   
 }
-.login-div label, .signup-div label {
+
+
+.login-div label, .signup-div label{
     display: block;
     margin-bottom: 5px;
     color:#44067b
