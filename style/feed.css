@@ -47,7 +47,7 @@
 #post , #comments-area{
     flex-wrap: wrap;
     border-radius: 5px;
-    color: none;
+    color: black;
     background-color: transparent;
     border-color: transparent;
     margin-bottom: 10px;
@@ -56,15 +56,12 @@
 
 .posts-background {
     border-radius: 10px;
-    border: none;
     padding: 30px;
     background-color: var(--color-feed-bg);
-    margin-bottom: 100px;
+    margin: 40px auto 100px auto;
     display: flex;
     flex-direction: column;
-    width: 60%;
-    margin: 100px auto;
-    align-items: center;
+    max-width: 800px;
     gap:20px;
 }
 

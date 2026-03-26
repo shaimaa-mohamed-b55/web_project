@@ -33,24 +33,28 @@
 }
 
 .post p{
-    color: antiquewhite;
+    color: black;
     line-height: 1.4;
 }
 /* always start by the modile display , then override it for larger screens like desktop */
 
-
-.posts-background{
+.posts-background {
     margin: 1rem auto;
     padding: 1rem;
-    width: 100%;
     display: grid;
 }
 
 .posts-background:has(#profile-mod){
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 100%;
+    display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: 
     "profile-mod"
     "profile-create-post";
+    background-color: white;
+
 
 }
     
@@ -70,11 +74,6 @@
         padding: 16px 24px;
     } */
 
-    .posts-background {
-        width: 80%;
-        margin: 30px auto;
-        padding: 25px;
-    }
 
     .post {
         width: 100%;
@@ -99,13 +98,7 @@
         width: 350px;
     }
 
-    .posts-background{
-        padding: 2rem;
-        grid-template-columns: 1fr 2fr;
-        grid-template-areas: 
-        "profile-mod profile-create-post";
-        gap: 20px;
-    }
+
 
 }
 
@@ -123,12 +116,6 @@
         justify-content: center;
     }
 
-    .posts-background {
-        width: 60%;
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 30px;
-    }
 
     .post{
         width: 500px;
@@ -274,12 +261,6 @@ a[href="login.html"] {
     gap: 20px;
 }
 
-.posts-background{
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-        "feed-create-post-form"
-        "feed-posts";
-}
 
 .user-action {
     width: 100%;
@@ -325,18 +306,6 @@ a[href="login.html"] {
 }
 
 
-.posts-background {
-    border-radius: 10px;
-    padding: 1rem;
-    width: 95%;
-    background-color: white;
-    margin-bottom: 100px;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas: 
-    "profile-mod  profile-create-post";
-
-}
 
 #submit-btn,
 #clear-btn,

@@ -93,7 +93,7 @@ header{
     align-items: center;
     padding: 20px;
     margin: 0px;
-    color: var(--purp);
+    color: black;
     background-color: transparent;
     width: 100%;
 }
@@ -119,7 +119,7 @@ section h2 {
 }
 
 .loginHeader{
-    color: var(--bg);
+    color: black;
     background-color: var(--purp);
     width: 50%;
     border-radius: 0;
