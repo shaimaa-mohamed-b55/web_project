@@ -1,0 +1,11 @@
+#feed-create-post-form{
+    grid-area:  feed-create-post-form;
+}
+
+#feed-posts{
+    grid-area: feed-posts;
+}
+
+.posts-background {
+    
+}

@@ -91,7 +91,13 @@ function renderFeedPosts(){
     const feedDiv = document.querySelector("#feed-posts");
     if(!feedDiv) return;
 
-    const allPosts = postManager.getAll();
+
+    const allUsers = JSON.parse(localStorage.getItem("allUsers")) || [];
+    const currentUser = allUsers.find(u=>u.username === loggedInUser);
+    const following = currentUser? currentUser.followings : [];
+
+    const allPosts = postManager.getAll().filter(post=>
+        post.username === loggedInUser || following.includes(post.username));
     if(allPosts.length === 0){
         feedDiv.innerHTML = "<p>No Posts yet</p>";
         return ;
@@ -116,14 +122,15 @@ function renderFeedPosts(){
                 <p>${post.post}</p>
                 <div class="post-actions">
                     <button onClick="toggleLike('${post.id}')">
-                        ${liked ? `<img src="media/images/star.png" width="20"> `: `<img src="media/images/no-color-star.png" width="20">`}
+                        ${liked ? `<img src="media/icons/star.png" width="20"> `: `<img src="media/icons/no-color-star.png" width="20">`}
                     </button>
+                    ${isOwnder? `<button onclick="deletePost('${post.id}')">Delete</button>`: ""}
                 </div>
+                <div class="comments-section">${commentsHTML}</div>
                 <textarea id="comment-input-${post.id}" placeholder="write your comment here"></textarea>
                 <button onClick="submitComment('${post.id}')">Comment</button>
             </div>`; 
-    }).join("");
-    
+    }).join("");    
 }
 
 
@@ -156,18 +163,14 @@ if(clearListener){
 // wait, before that , the feed should be connected to login form , 
 // so we are not displaying everyone's account , but only our user's followers
 
-
-
 const profileBtn = document.querySelector("#profile-btn");
 profileBtn.addEventListener("click",function(){
-
     const loggedInUser = localStorage.getItem("loggedInUser");
     if(!loggedInUser) return;
 
-    localStorage.setItem("viewingProfile",loggedInUser);
-    window.location.href = "profile.html"
-})
+    localStorage.setItem("viewingFeed",loggedInUser);
+    window.location.href = "profile.html";
+
+});
 
 renderFeedPosts();
-
-

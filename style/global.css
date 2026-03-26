@@ -95,7 +95,7 @@ h1,h2,h3{
     flex-wrap: nowrap;
 }
 
-main{
+.posts-background{
     background-color: bisque; 
     padding: 50px;
     /* border-color: rgb(160, 99, 8); */

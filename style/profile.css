@@ -6,10 +6,9 @@
 }
 
 #profile-mod{
-    width: 400px;
-    margin: 30px;
+    margin: 1rem;
     /* padding: 20px; */
-    padding: 60px ;
+    padding: 0.5rem ;
     align-items:start;
 
     border-radius: 12px;
@@ -19,6 +18,18 @@
     border: 2px solid rgb(248, 219, 241);
 
     font-size: small;
+}
+
+#profile-mod .profile-bio{
+    color: bisque;
+    padding: 2rem;
+    background-color: bisque;
+}
+
+#profile-mod .profile-username{
+    color: cadetblue;
+    padding-top: 2rem;
+    background-color: pink;
 }
 
 #profile-mod:hover{
@@ -36,5 +47,29 @@
     align-items: center;
     gap: 10px;
     border: 2px solid rgb(248, 219, 241);
+}
+
+#profile-create-post:hover{
+    transform: translateY(-3px);
+    border: 2px solid rgb(248, 219, 241);
 
 }
+
+
+#profile-mod{
+    grid-area: profile-mod;
+}
+
+#profile-create-post{
+    grid-area: profile-create-post;
+}
+
+/* main{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+        "profile-mod  profile-create-post";
+} */
+
+
