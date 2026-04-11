@@ -1,0 +1,15 @@
+[
+    {
+        "id": "user-name Date.now()",
+        "username": "username",
+        "post": "post",
+        "createdAt":" new Date()",
+        "likes": ["firstLike","secondLike"],
+        "comments":[
+        {   "username": "username",
+            "text": "commenttext",
+            "createdAt": "Date AM"
+        }
+    ]
+    }
+]
