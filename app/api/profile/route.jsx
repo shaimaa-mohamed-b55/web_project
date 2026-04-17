@@ -1,77 +1,58 @@
-import { NextResponse } from 'next/server'
-import path from 'path'
-import { promises as fs } from 'fs'
+import { NextResponse } from "next/server";
+import profileRepo from "@/repos/ProfileRepo";
+import authRepo from "@/repos/AuthRepo";
+
+export async function GET(request) {
+    let profiles = await profileRepo.getAll();
 
 
-// accountsPath
-const profilePath = path.join(process.cwd(), "data", "profile.json")
 
-async function readProfile() {
-    const data = await fs.readFile(profilePath)
-    return JSON.parse(data)
+    const { searchParams } = new URL(request.url);
+
+    const username = searchParams.get("username");
+
+    if (username) profiles = profiles.filter(b => b.username === username);
+
+    return NextResponse.json(profiles);
 }
 
-async function writeProfile(profiles) {
-    const data = JSON.stringify(profiles, null, 4)
-    return fs.writeFile(profilePath,data)
+export async function POST(request) {
+    const body = await request.json();
 
-}
+    // { "username":"username","firstname": "firstname" ,"lastname": "lastname","email": "email", "password": "password","bio":"bio", "followings":[],"followers":[],"createdAt": "Date()"}
 
-export async function GET(request, { params }) {
-    try{    
-        const profiles = await readProfile()
 
-        const {searchParams} = new URL(request.url)
-        const username = searchParams.get("username")
-        const bio = searchParams.get("bio")
-
-        if(!username && !bio){
-            return NextResponse.json(profiles)
-    
-        }
-        const filteredProfiles = profiles.filter(a=>a.username == username && a.bio == bio) 
-        return NextResponse.json(filteredProfiles)
+    if (!body.username || !body.firstname || !body.lastname || !body.email || !body.password) {
+        return NextResponse.json(
+            { error: "username, firstname, lastname,email and password are required" },
+            { status: 400 }
+        );
     }
-    catch(error){
-        return NextResponse.json({error: error.message})
+
+    const authUser = await authRepo.getById(body.username);
+    if(!authUser){
+               return NextResponse.json(
+            { error: "User doesnt have an accoutn" },
+            { status: 400 }
+        );
     }
-}
 
-
-
-
-
-
-// this post method should have displayed the content 
-
-// we didnt check if
-
-// adding a new resource [account]
-// this one to updata the data
-export async function POST(response, { params }) {
-    try {
-        const profile = await response.json()
-
-        // make a validations
-        if (!profile.bio ||profile.bio < 3)
-            return NextResponse.json({ message: "profile bio can not be null" })
-
-        const profiles = await readProfile()
-        profiles.push(profile)
-        await writeProfile(profiles)
-
-        return NextResponse.json({ message: "successfully added the profile" })
-    } catch (e) {
-        return NextResponse.json({
-            message: "unable to add profile",
-            error: e.message,
-            stack: e.stack })
+    const profileUser = await profileRepo.getById(body.username);
+    if(profileUser){
+            return NextResponse.json(
+            { error: "User already have a profile" },
+            { status: 400 }
+            );
     }
+
+    const newProfile = {
+    ...body,
+    followings: [],
+    followers: [],
+    createdAt: new Date().toLocaleString()
+};
+
+
+    const created = await profileRepo.create(newProfile);
+    return NextResponse.json(created, { status: 201 });
 }
-
-// localhost: 3000/api/accounts {returns all the accounts}
-// if this was the question , we will have to create a folder
-// call it api , inside it folder called accounts 
-// and to retuan all the accounts , it must have a get method 
- 
-

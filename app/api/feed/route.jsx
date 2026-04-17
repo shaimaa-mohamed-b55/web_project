@@ -1,74 +1,52 @@
-import { NextResponse } from 'next/server'
-import path from 'path'
-import { promises as fs } from 'fs'
+import { NextResponse } from "next/server";
+import feedRepo from "@/repos/FeedRepo";
 
-const feedPath = path.join(process.cwd(), "data", "feed.json")
+export async function GET(request) {
+    let feeds = await feedRepo.getAll();
 
-async function readPath() {
-    const data = await fs.readFile(feedPath)
-    return JSON.parse(data)
+    const { searchParams } = new URL(request.url);
+    const username = searchParams.get("username");
+
+    if(username) feeds = feeds.filter(t=>t.username === username);
+
+    return NextResponse.json(feeds);
 }
 
-async function writeFeed(feeds) {
-    const data = JSON.stringify(feeds, null, 4)
-    return fs.writeFile(feedPath,data)
+export async function POST(request) {
+    const body = await request.json();
 
-}
 
-export async function GET(request, { params }) {
-    try{    
-        const feeds = await readPath()
-
-        const {searchParams} = new URL(request.url)
-        const id = searchParams.get("id")
-        const post = searchParams.get("post")
-        const username = searchParams.get("username")
-        if(!username){
-            return NextResponse.json(feeds)
+        //     "id": "user-name Date.now()",
+        // "createdAt":" new Date()",
+        // "likes": ["firstLike","secondLike"],
+        // "comments":[
+        // {   "username": "username",
+        //     "text": "commenttext",
+        //     "createdAt": "Date AM"
+        // }
     
-        }
-        const filteredFeeds = feeds.filter(a=>a.username == username) 
-        return NextResponse.json(filteredFeeds)
+    if (!body.username || !body.post ) {
+        return NextResponse.json(
+            { error: "username and post are required" },
+            { status: 400 }
+        );
     }
-    catch(error){
-        return NextResponse.json({error: error.message})
+
+    const profileUser = await profileRepo.getById(body.username);
+    if(!profileUser){
+        return NextResponse.json(
+            {error: "the user doesnt have a profile"},{status:400}
+            
+        );
     }
+
+    const newFeed = {
+        ...body,
+        likes: [],
+        comments: [],
+        createdAt: new Date().toLocaleString()
+    };
+
+    const created = await feedRepo.create(newFeed);
+    return NextResponse.json(created, { status: 201 });
 }
-
-
-
-
-
-
-// this post method should have displayed the content 
-
-
-// adding a new resource [account]
-// this one to updata the data
-export async function POST(response, { params }) {
-    try {
-        const feed = await response.json()
-
-        // make a validations
-        if (!feed.username || !feed.post ||feed.post.length < 3)
-            return NextResponse.json({ message: "feed post can not be null" })
-
-        const feeds = await readPath()
-        feeds.push(feed)
-        await writeFeed(feeds)
-
-        return NextResponse.json({ message: "successfully added the post" })
-    } catch (e) {
-        return NextResponse.json({
-            message: "unable to add post",
-            error: e.message,
-            stack: e.stack })
-    }
-}
-
-// localhost: 3000/api/feeds {returns all the posts in feed for the user}
-// if this was the question , we will have to create a folder
-// call it api , inside it folder called feeds 
-// and to retuan all the posts , it must have a get method 
- 
-
