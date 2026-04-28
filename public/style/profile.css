@@ -1,0 +1,94 @@
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: medium;
+}
+
+
+
+#profile-mod{
+    margin: 1rem;
+    /* padding: 20px; */
+    padding: 0.5rem ;
+    align-items:start;
+
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px solid rgb(248, 219, 241);
+
+    font-size: small;
+}
+
+#profile-mod .profile-bio{
+    color: bisque;
+    padding: 2rem;
+    background-color: bisque;
+}
+
+#profile-mod .profile-username{
+    color: cadetblue;
+    padding-top: 2rem;
+    background-color: var();
+}
+
+#profile-mod:hover{
+    transform: translateY(-3px);
+}
+
+#profile-create-post{
+    padding: 30px;
+    margin: 20px;
+    background-color: antiquewhite;
+
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid rgb(248, 219, 241);
+}
+
+#profile-create-post:hover{
+    transform: translateY(-3px);
+    border: 2px solid rgb(248, 219, 241);
+
+}
+
+
+#profile-mod{
+    grid-area: profile-mod;
+}
+
+#profile-create-post{
+    grid-area: profile-create-post;
+}
+
+/* main{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+        "profile-mod  profile-create-post";
+} */
+
+
+
+.header a{
+    background-color: var(--color-secodary);
+    color: var(--color-primary);
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    font-weight: bold;
+      
+}
+.header a:hover{
+    color: #3f055b;
+    transform: translateY(-2px);
+}
+

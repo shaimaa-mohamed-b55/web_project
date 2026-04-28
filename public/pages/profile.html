@@ -1,44 +1,70 @@
-<h2>Goals</h2>
-<div class="card form-card">
-    <h3 id="goals-form-title">Add Goal</h3>
-    <form id="goal-form">
-        <div class="form-row">
-            <div class="form-group">
-                <label for="goal-name">Name</label>
-                <input type="text" id="goal-name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="goal-target">Target (QAR)</label>
-                <input type="number" id="goal-target" name="target" step="0.01" required>
-            </div>
-            <div class="form-group">
-                <label for="goal-current">Current (QAR)</label>
-                <input type="number" id="goal-current" name="current" step="0.01" required>
-            </div>
-            <div class="form-group">
-                <label for="goal-targetDate">Target Date</label>
-                <input type="date" id="goal-targetDate" name="targetDate" required>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/public/style/main.css">
+          <link rel="stylesheet" href="/public/style/profile.css">
+
+    
+</head>
+
+
+<body>
+    <header class="header">
+        <img class="logo" src="/public/media/images/flow_logo.png" alt="Flow Logo">
+         <a href="/public/pages/feed.html">Your Feed</a>
+    </header>
+    <main>
+    <div class="profile">
+        <h1>Here is your profile</h1>
         </div>
-        <div class="btn-group">
-            <button type="submit" class="btn btn-primary" id="goals-submit-btn">Add Goal</button>
-            <button type="button" class="btn btn-secondary hidden" id="goals-cancel-btn" onclick="cancelEditGoal()">Cancel</button>
+        <div class="posts-background">
+        <div id="profile-mod">
+            <h1 id="profile-username"></h1>
+            <h2 id="profile-bio"></h2>
+            <button id="edit-btn"  style="display:none;">EditBio</button>
+
+            <h3>Followers:<span id="followers-count">0</span></h3>
+            <h3>followingss:<span id="following-count">0</span></h3>
+
+            <button id="follow-btn" style="display:none;">Follow</button> 
+
+            <div id="edit-form" style="display: none;">
+                <textarea id="bio-input" placeholder="write your bio.."></textarea>
+                <button id="save-btn">Save</button>
+
+            </div>
+
+            <input type="text" id="search-user" placeholder="find friends..">
+            <div id="search-results"></div><br>
+            <input type="button" value="Feed" id="feed-btn">
+
         </div>
-    </form>
-</div>
-<div class="table-container">
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Target (QAR)</th>
-                <th>Current (QAR)</th>
-                <th>Target Date</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody id="goals-table-body">
-            <tr><td colspan="5" class="empty-message">Loading...</td></tr>
-        </tbody>
-    </table>
-</div>
+
+    <!-- i believe that this form should be the same for our creating a post in the feed as well,  -->
+     <!-- so anything would be published here , will automatically display there in the feed  -->
+        <section id="profile-create-post">
+            <h3>Create a post</h3>
+            <form id="profile-create-post-form">
+                <textarea id="profile-post-input" placeholder="type your post here"></textarea>
+                <button id="profile-submit-btn" type="submit" name="create a post">Submit</button>
+                <!-- <button id="clear-btn" type="clear" name="clear a post">Clear</button> -->
+            </form>
+            <div id="profile-posts">
+
+            </div>
+
+        </section>
+    </main>
+</body>
+  <footer class="footer">
+    <p>&copy; 2026 Flow. All rights reserved.</p>
+    <a href="/public/pages/login.html">Login</a> 
+    <a href="/public/pages/signup.html">Signup</a>
+</footer>
+<script src="/public/js/profile.js"></script>
+
+</html>

@@ -1,3 +1,11 @@
 [
-    { "username":"username","firstname": "firstname" ,"lastname": "lastname","email": "email", "password": "password","bio":"bio", "followings":[],"followers":[],"createdAt": "Date()"}
+    { "username":"username",
+    "firstname": "firstname" ,
+    "lastname": "lastname",
+    "email": "email",
+     "password": "password",
+     "bio":"bio",
+      "followings":[],
+      "followers":[],
+      "createdAt": "Date()"}
 ]
