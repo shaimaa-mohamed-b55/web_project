@@ -1,15 +1,128 @@
+
 [
-    {
-        "id": "user-name Date.now()",
-        "username": "username",
-        "post": "post",
-        "createdAt":" new Date()",
-        "likes": ["firstLike","secondLike"],
-        "comments":[
-        {   "username": "username",
-            "text": "commenttext",
-            "createdAt": "Date AM"
-        }
+  {
+    "id": "sara_ahmed_1714384800000",
+    "username": "sara_ahmed",
+    "post": "Started my morning with a great workout session. Feeling energized! 💪",
+    "createdAt": "2026-04-29 07:30:00",
+    "likes": ["omar_khalid", "noora_h", "layan_nasser"],
+    "comments": [
+      {
+        "username": "noora_h",
+        "text": "Keep going! You are inspiring us all.",
+        "createdAt": "2026-04-29 08:00:00"
+      }
     ]
-    }
+  },
+
+  {
+    "id": "omar_khalid_1714385400000",
+    "username": "omar_khalid",
+    "post": "Just finished reading 'Atomic Habits'. It's a game changer for anyone looking to improve their daily routine.",
+    "createdAt": "2026-04-29 09:15:00",
+    "likes": ["faisal_q", "reem_abdullah"],
+    "comments": [
+      {
+        "username": "faisal_q",
+        "text": "That's a classic! Have you read 'Deep Work' yet?",
+        "createdAt": "2026-04-29 10:00:00"
+      }
+    ]
+  },
+
+  {
+    "id": "layan_nasser_1714386000000",
+    "username": "layan_nasser",
+    "post": "Exploring the hidden gems of the city today. Found this cozy little bookstore! 📚✨",
+    "createdAt": "2026-04-29 11:45:00",
+    "likes": ["sara_ahmed", "dana_design", "hind_alali"],
+    "comments": []
+  },
+
+  {
+    "id": "faisal_q_1714386600000",
+    "username": "faisal_q",
+    "post": "The weather today is perfect for a weekend trip. Thinking of heading to the mountains. 🏔️",
+    "createdAt": "2026-04-29 13:20:00",
+    "likes": ["hamad_jaber", "saud_90"],
+    "comments": [
+      {
+        "username": "saud_90",
+        "text": "Take some photos for us! The view there must be amazing.",
+        "createdAt": "2026-04-29 13:45:00"
+      }
+    ]
+  },
+
+  {
+    "id": "noora_h_1714387200000",
+    "username": "noora_h",
+    "post": "Trying my hand at baking today. Homemade cookies are the best! 🍪🍪",
+    "createdAt": "2026-04-29 15:10:00",
+    "likes": ["layan_nasser", "maryam_k", "reem_abdullah"],
+    "comments": [
+      {
+        "username": "reem_abdullah",
+        "text": "They look delicious! Save some for me please.",
+        "createdAt": "2026-04-29 15:30:00"
+      }
+    ]
+  },
+
+  {
+    "id": "hamad_jaber_1714387800000",
+    "username": "hamad_jaber",
+    "post": "Watched an incredible documentary about marine life last night. Highly recommend it! 🌊",
+    "createdAt": "2026-04-29 16:50:00",
+    "likes": ["khalid_f", "mona_m"],
+    "comments": []
+  },
+
+  {
+    "id": "reem_abdullah_1714388400000",
+    "username": "reem_abdullah",
+    "post": "New plant for my office! Hope I can keep this one alive. 🌿🪴",
+    "createdAt": "2026-04-29 18:30:00",
+    "likes": ["dana_design", "noora_h"],
+    "comments": [
+      {
+        "username": "dana_design",
+        "text": "Just remember: don't overwater it! 😅",
+        "createdAt": "2026-04-29 18:45:00"
+      }
+    ]
+  },
+
+  {
+    "id": "hind_alali_1714389000000",
+    "username": "hind_alali",
+    "post": "Such a productive day! Managed to clear my whole to-do list before 5 PM.",
+    "createdAt": "2026-04-29 17:05:00",
+    "likes": ["sara_ahmed", "omar_khalid"],
+    "comments": []
+  },
+
+  {
+    "id": "saud_90_1714389600000",
+    "username": "saud_90",
+    "post": "Just saw the new Batman movie. The cinematography was top-notch! 🎬",
+    "createdAt": "2026-04-29 21:00:00",
+    "likes": ["faisal_q", "bader_k"],
+    "comments": [
+      {
+        "username": "bader_k",
+        "text": "No spoilers! I'm watching it tomorrow.",
+        "createdAt": "2026-04-29 21:15:00"
+      }
+    ]
+  },
+
+  {
+    "id": "maryam_k_1714390200000",
+    "username": "maryam_k",
+    "post": "Morning tea and some planning for the upcoming month. ☕📝",
+    "createdAt": "2026-04-29 08:45:00",
+    "likes": ["noora_h", "hind_alali"],
+    "comments": []
+  }
 ]

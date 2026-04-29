@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "username": "username",
+    "lastname": "lastname",
+    "firstname": "firstname",
+    "email": "email",
+    "password": "password",
+    "followings": 0,
+    "followers": 0,
+    "createdAt": "Date()"
+  }
+,
+    {
+        "id": "user-name Date.now()",
+        "username": "username",
+        "post": "post",
+        "createdAt":" new Date()",
+        "likes": ["firstLike","secondLike"],
+        "comments":[
+        {   "username": "username",
+            "text": "commenttext",
+            "createdAt": "Date AM"
+        }
+    ]
+    }
+    ,
+    { "username":"username",
+    "firstname": "firstname" ,
+    "lastname": "lastname",
+    "email": "email",
+     "password": "password",
+     "bio":"bio",
+      "followings":[],
+      "followers":[],
+      "createdAt": "Date()"}
+
+]

@@ -1,2 +1,2 @@
-{"timestamp":"00:00:01.607","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:48.884","source":"Server","level":"LOG","message":"○ Compiling /_not-found/page ..."}
+{"timestamp":"00:00:01.458","source":"Server","level":"LOG","message":""}
+{"timestamp":"01:18:23.830","source":"Server","level":"LOG","message":"  Reload env: .env"}
