@@ -115,12 +115,7 @@ async function seedFeed(name, items) {
 }
 
 async function main() {
-  // مسح البيانات القديمة لضمان عدم حدوث تكرار (Constraint Error)
-  await prisma.like.deleteMany({});
-  await prisma.comment.deleteMany({});
-  await prisma.post.deleteMany({});
-  await prisma.profile.deleteMany({});
-  await prisma.user.deleteMany({});
+  
 
   const usersData = await readJson("profile.json");
   const feedData = await readJson("feed.json");
