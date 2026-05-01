@@ -15,7 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/shaimaa-mohamed-b55/web_project/issues"
   },
@@ -29,10 +29,7 @@
   "devDependencies": {
     "prisma": "^6.19.3"
   },
-  
-    "prisma":{
-      "seed": "node prisma/seed.js"
-    }
-
- 
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  }
 }

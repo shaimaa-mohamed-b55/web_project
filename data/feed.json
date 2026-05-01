@@ -1,128 +1,147 @@
-
 [
   {
-    "id": "sara_ahmed_1714384800000",
-    "username": "sara_ahmed",
-    "post": "Started my morning with a great workout session. Feeling energized! 💪",
-    "createdAt": "2026-04-29 07:30:00",
-    "likes": ["omar_khalid", "noora_h", "layan_nasser"],
+    "id": "ahmed_99-1714564800000",
+    "username": "ahmed_99",
+    "post": "Exploring the hidden gems of the city today. The architecture here is absolutely breathtaking!",
+    "createdAt": "2026-05-01 09:00:00",
+    "likes": ["sara_dev", "omar_tech", "faisal_a"],
     "comments": [
       {
-        "username": "noora_h",
-        "text": "Keep going! You are inspiring us all.",
-        "createdAt": "2026-04-29 08:00:00"
+        "username": "sara_dev",
+        "text": "The lighting in that photo is perfect!",
+        "createdAt": "2026-05-01 09:15 AM"
+      },
+      {
+        "username": "omar_tech",
+        "text": "I need to visit that spot soon.",
+        "createdAt": "2026-05-01 09:30 AM"
       }
     ]
   },
-
   {
-    "id": "omar_khalid_1714385400000",
-    "username": "omar_khalid",
-    "post": "Just finished reading 'Atomic Habits'. It's a game changer for anyone looking to improve their daily routine.",
-    "createdAt": "2026-04-29 09:15:00",
-    "likes": ["faisal_q", "reem_abdullah"],
+    "id": "sara_dev-1714565400000",
+    "username": "sara_dev",
+    "post": "Just finished reading a mystery novel. That plot twist at the end was totally unexpected!",
+    "createdAt": "2026-05-01 10:30:00",
+    "likes": ["layla_m", "nour_star", "lina_art"],
     "comments": [
       {
-        "username": "faisal_q",
-        "text": "That's a classic! Have you read 'Deep Work' yet?",
-        "createdAt": "2026-04-29 10:00:00"
+        "username": "nour_star",
+        "text": "No spoilers please! I just started it.",
+        "createdAt": "2026-05-01 10:45 AM"
       }
     ]
   },
-
   {
-    "id": "layan_nasser_1714386000000",
-    "username": "layan_nasser",
-    "post": "Exploring the hidden gems of the city today. Found this cozy little bookstore! 📚✨",
-    "createdAt": "2026-04-29 11:45:00",
-    "likes": ["sara_ahmed", "dana_design", "hind_alali"],
-    "comments": []
-  },
-
-  {
-    "id": "faisal_q_1714386600000",
-    "username": "faisal_q",
-    "post": "The weather today is perfect for a weekend trip. Thinking of heading to the mountains. 🏔️",
-    "createdAt": "2026-04-29 13:20:00",
-    "likes": ["hamad_jaber", "saud_90"],
+    "id": "omar_tech-1714566000000",
+    "username": "omar_tech",
+    "post": "There is nothing like a morning run to clear your head and start the day with fresh energy.",
+    "createdAt": "2026-05-01 11:00:00",
+    "likes": ["ahmed_99", "khaled_v", "ali_pro"],
     "comments": [
       {
-        "username": "saud_90",
-        "text": "Take some photos for us! The view there must be amazing.",
-        "createdAt": "2026-04-29 13:45:00"
+        "username": "khaled_v",
+        "text": "I wish I had your discipline!",
+        "createdAt": "2026-05-01 11:20 AM"
       }
     ]
   },
-
   {
-    "id": "noora_h_1714387200000",
-    "username": "noora_h",
-    "post": "Trying my hand at baking today. Homemade cookies are the best! 🍪🍪",
-    "createdAt": "2026-04-29 15:10:00",
-    "likes": ["layan_nasser", "maryam_k", "reem_abdullah"],
+    "id": "layla_m-1714566600000",
+    "username": "layla_m",
+    "post": "Tried a new Italian restaurant tonight. The pasta was 10/10. Highly recommend!",
+    "createdAt": "2026-05-01 12:00:00",
+    "likes": ["mariam_k", "reem_sky", "dana_blue"],
     "comments": [
       {
-        "username": "reem_abdullah",
-        "text": "They look delicious! Save some for me please.",
-        "createdAt": "2026-04-29 15:30:00"
+        "username": "mariam_k",
+        "text": "Send me the location! I love Italian food.",
+        "createdAt": "2026-05-01 12:10 PM"
       }
     ]
   },
-
   {
-    "id": "hamad_jaber_1714387800000",
-    "username": "hamad_jaber",
-    "post": "Watched an incredible documentary about marine life last night. Highly recommend it! 🌊",
-    "createdAt": "2026-04-29 16:50:00",
-    "likes": ["khalid_f", "mona_m"],
-    "comments": []
-  },
-
-  {
-    "id": "reem_abdullah_1714388400000",
-    "username": "reem_abdullah",
-    "post": "New plant for my office! Hope I can keep this one alive. 🌿🪴",
-    "createdAt": "2026-04-29 18:30:00",
-    "likes": ["dana_design", "noora_h"],
+    "id": "faisal_a-1714567200000",
+    "username": "faisal_a",
+    "post": "Thinking about getting a new pet. Should I go with a cat or a dog?",
+    "createdAt": "2026-05-01 01:30:00",
+    "likes": ["abdullah_k", "youssef_j", "huda_r"],
     "comments": [
       {
-        "username": "dana_design",
-        "text": "Just remember: don't overwater it! 😅",
-        "createdAt": "2026-04-29 18:45:00"
+        "username": "abdullah_k",
+        "text": "Dogs are great companions if you have the time for walks!",
+        "createdAt": "2026-05-01 01:45 PM"
       }
     ]
   },
-
   {
-    "id": "hind_alali_1714389000000",
-    "username": "hind_alali",
-    "post": "Such a productive day! Managed to clear my whole to-do list before 5 PM.",
-    "createdAt": "2026-04-29 17:05:00",
-    "likes": ["sara_ahmed", "omar_khalid"],
-    "comments": []
-  },
-
-  {
-    "id": "saud_90_1714389600000",
-    "username": "saud_90",
-    "post": "Just saw the new Batman movie. The cinematography was top-notch! 🎬",
-    "createdAt": "2026-04-29 21:00:00",
-    "likes": ["faisal_q", "bader_k"],
+    "id": "nour_star-1714567800000",
+    "username": "nour_star",
+    "post": "The beach today was so peaceful. Watching the waves is the best therapy.",
+    "createdAt": "2026-05-01 05:45:00",
+    "likes": ["mona_lisa", "amal_hope", "huda_r"],
     "comments": [
       {
-        "username": "bader_k",
-        "text": "No spoilers! I'm watching it tomorrow.",
-        "createdAt": "2026-04-29 21:15:00"
+        "username": "huda_r",
+        "text": "It looks so relaxing. Enjoy your time!",
+        "createdAt": "2026-05-01 06:00 PM"
       }
     ]
   },
-
   {
-    "id": "maryam_k_1714390200000",
-    "username": "maryam_k",
-    "post": "Morning tea and some planning for the upcoming month. ☕📝",
-    "createdAt": "2026-04-29 08:45:00",
-    "likes": ["noora_h", "hind_alali"],
-    "comments": []
+    "id": "ali_pro-1714568400000",
+    "username": "ali_pro",
+    "post": "Taking a weekend trip to the mountains. Can't wait to see the view from the top.",
+    "createdAt": "2026-05-01 07:00:00",
+    "likes": ["badir_90", "jawaher_a", "nasser_1"],
+    "comments": [
+      {
+        "username": "nasser_1",
+        "text": "Have a safe trip and take lots of photos!",
+        "createdAt": "2026-05-01 07:20 PM"
+      }
+    ]
+  },
+  {
+    "id": "reem_sky-1714569000000",
+    "username": "reem_sky",
+    "post": "Starting a 30-day yoga challenge. Wish me luck!",
+    "createdAt": "2026-05-01 08:00:00",
+    "likes": ["mariam_k", "lina_art", "dana_blue"],
+    "comments": [
+      {
+        "username": "lina_art",
+        "text": "You got this! Yoga is life-changing.",
+        "createdAt": "2026-05-01 08:15 PM"
+      }
+    ]
+  },
+  {
+    "id": "khaled_v-1714569600000",
+    "username": "khaled_v",
+    "post": "Coffee and rain—the perfect combination for a Friday afternoon.",
+    "createdAt": "2026-05-01 03:00:00",
+    "likes": ["omar_tech", "faisal_a", "badir_90"],
+    "comments": [
+      {
+        "username": "badir_90",
+        "text": "Best vibes ever. Enjoy!",
+        "createdAt": "2026-05-01 03:10 PM"
+      }
+    ]
+  },
+  {
+    "id": "mona_lisa-1714570200000",
+    "username": "mona_lisa",
+    "post": "Visited a modern art gallery today. Some of the pieces were truly inspiring.",
+    "createdAt": "2026-05-01 04:30:00",
+    "likes": ["nour_star", "amal_hope", "reem_sky"],
+    "comments": [
+      {
+        "username": "amal_hope",
+        "text": "Art has a way of speaking to the soul.",
+        "createdAt": "2026-05-01 04:50 PM"
+      }
+    ]
   }
 ]
