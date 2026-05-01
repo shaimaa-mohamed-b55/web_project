@@ -28,16 +28,33 @@ async function seedUsers(name, items) {
           profile: {
             create: {
               bio: item.bio || "",
-              followings: Array.isArray(item.followings)
-                ? item.followings.join(",")
-                : String(item.followings || ""),
-              followers: Array.isArray(item.followers)
-                ? item.followers.join(",")
-                : String(item.followers || ""),
             },
           },
         },
       });
+    }
+    const allUsers = await prisma.user.findMany();
+    const userMap = new Map(allUsers.map((u) => [u.username, u.id]));
+
+    for (const item of items) {
+      const followerId = userMap.get(item.username);
+
+      if (item.followings && followerId) {
+        const followingNames = String(item.followings).split(",");
+
+        for (const targetName of followingNames) {
+          const followingId = userMap.get(targetName.trim());
+
+          if (followingId) {
+            await prisma.follow.create({
+              data: {
+                followerId: followerId,
+                followingId: followingId,
+              },
+            });
+          }
+        }
+      }
     }
     console.log(`Seeded ${items.length} ${name} successfully!`);
   } catch (e) {
@@ -60,7 +77,6 @@ async function seedFeed(name, items) {
 
       if (!postAuthor) continue;
 
-      // 1. تجهيز اللايكات بشكل نظيف لتجنب خطأ "userId is missing"
       const validLikes = [];
       for (const likeUser of item.likes || []) {
         const liker = await prisma.user.findUnique({
@@ -73,7 +89,6 @@ async function seedFeed(name, items) {
         }
       }
 
-      // 2. إنشاء المنشور مع التعليقات واللايكات
       await prisma.post.create({
         data: {
           post: item.post,
