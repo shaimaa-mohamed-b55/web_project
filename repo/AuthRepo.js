@@ -1,6 +1,7 @@
 import { promises as fs } from "fs";
 import path from "path";
-import { Prisma } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
+
 
 const prisma = new PrismaClient();
 const dataPath = path.join(process.cwd(), "data", "auth.json");
@@ -10,9 +11,15 @@ class AuthRepo {
         // const data = await fs.readFile(dataPath, "utf-8");
         // return JSON.parse(data);
         return await prisma.user.findMany({
+            select:{
+                id: true,
+                username: true,
+                email: true,
+            },
             orderBy: {
                 createdAt: "desc",
             },
+            
         });
 
     }
@@ -26,7 +33,7 @@ class AuthRepo {
         // return all.find(b => b.id === Number(id));
         return await prisma.user.findUnique({
             where: {
-                id: id
+                id:Number(id)
             },
         });
     }
@@ -69,7 +76,7 @@ class AuthRepo {
         // return all[index];
         return await prisma.user.update({
             where: {
-                id: id,
+                id: Number(id),
             },
             data: data,
         });
