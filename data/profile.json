@@ -1,222 +1,502 @@
 [
   {
     "username": "ahmed_99",
-    "firstname": "Ahmed",
-    "lastname": "Mansour",
     "email": "ahmed.mansour99@gmail.com",
     "password": "AhMeD_user2026",
-    "bio": "Adventure seeker and coffee enthusiast. Always looking for the next mountain to climb.",
-    "followings": ["sara_dev", "omar_tech", "layla_m"],
-    "followers": ["faisal_a", "huda_r", "nasser_1"],
-    "createdAt": "2026-01-15 10:30:00"
+    "firstname": "Ahmed",
+    "lastname": "Mansour",
+    "bio": "Keep it simple, live the moment.",
+    "followings": "sara_dev,omar_tech,layla_m",
+    "followers": "faisal_a,huda_r,nasser_1"
   },
   {
     "username": "sara_dev",
-    "firstname": "Sara",
-    "lastname": "Al-Fahad",
     "email": "sara.dev.88@hotmail.com",
     "password": "sara_password_98",
-    "bio": "Bookworm and amateur photographer. Capturing life one frame at a time.",
-    "followings": ["ahmed_99", "nour_star", "lina_art"],
-    "followers": ["ahmed_99", "khaled_v", "omar_tech"],
-    "createdAt": "2026-01-16 12:00:00"
+    "firstname": "Sara",
+    "lastname": "Al-Fahad",
+    "bio": "Love traveling and exploring new cultures.",
+    "followings": "ahmed_99,nour_star,lina_art",
+    "followers": "ahmed_99,khaled_v,omar_tech"
   },
   {
     "username": "omar_tech",
-    "firstname": "Omar",
-    "lastname": "Hassan",
     "email": "omar.hassan.tech@outlook.com",
     "password": "omar_secure_!23",
-    "bio": "Fitness addict and marathon runner. Believe in the power of a healthy lifestyle.",
-    "followings": ["sara_dev", "khaled_v", "ali_pro"],
-    "followers": ["ahmed_99", "layla_m", "saif_n"],
-    "createdAt": "2026-01-17 09:15:00"
+    "firstname": "Omar",
+    "lastname": "Hassan",
+    "bio": "Coffee enthusiast and book reader.",
+    "followings": "sara_dev,khaled_v,ali_pro",
+    "followers": "ahmed_99,layla_m,saif_n"
   },
   {
     "username": "layla_m",
-    "firstname": "Layla",
-    "lastname": "Zaid",
     "email": "layla.zaid.m@yahoo.com",
     "password": "layla_secret_77",
-    "bio": "Foodie and home cook. Sharing my favorite recipes and culinary experiments.",
-    "followings": ["omar_tech", "mariam_k", "nour_star"],
-    "followers": ["ahmed_99", "nour_star", "reem_sky"],
-    "createdAt": "2026-01-18 14:45:00"
+    "firstname": "Layla",
+    "lastname": "Zaid",
+    "bio": "Nature lover and sunset chaser.",
+    "followings": "omar_tech,mariam_k,nour_star",
+    "followers": "ahmed_99,nour_star,reem_sky"
   },
   {
     "username": "khaled_v",
-    "firstname": "Khaled",
-    "lastname": "Salem",
     "email": "khaled.v.salem@gmail.com",
     "password": "kh_v88_random",
-    "bio": "Tech lover and gadget reviewer. Keeping up with the latest in innovation.",
-    "followings": ["sara_dev", "youssef_j", "faisal_a"],
-    "followers": ["omar_tech", "faisal_a", "badir_90"],
-    "createdAt": "2026-01-19 11:20:00"
+    "firstname": "Khaled",
+    "lastname": "Salem",
+    "bio": "Football fan and gym addict.",
+    "followings": "sara_dev,youssef_j,faisal_a",
+    "followers": "omar_tech,faisal_a,badir_90"
   },
   {
     "username": "nour_star",
-    "firstname": "Nour",
-    "lastname": "Ali",
     "email": "nour.ali.star@hotmail.com",
     "password": "nour_star_2026",
-    "bio": "Dreamer and stargazer. Life is better when you're looking up.",
-    "followings": ["layla_m", "sara_dev", "mona_lisa"],
-    "followers": ["sara_dev", "mona_lisa", "layla_m"],
-    "createdAt": "2026-01-20 08:00:00"
+    "firstname": "Nour",
+    "lastname": "Ali",
+    "bio": "Dream big, work hard, stay humble.",
+    "followings": "layla_m,sara_dev,mona_lisa",
+    "followers": "sara_dev,mona_lisa,layla_m"
   },
   {
     "username": "youssef_j",
-    "firstname": "Youssef",
-    "lastname": "Jabir",
     "email": "yousf.jabir.07@outlook.com",
     "password": "Y_Jabir_007",
-    "bio": "Traveler exploring the world one city at a time. Culture and history fan.",
-    "followings": ["faisal_a", "huda_r", "zane_smith"],
-    "followers": ["khaled_v", "zane_smith", "saud_un"],
-    "createdAt": "2026-01-21 16:30:00"
+    "firstname": "Youssef",
+    "lastname": "Jabir",
+    "bio": "Cooking is my therapy.",
+    "followings": "faisal_a,huda_r,zane_smith",
+    "followers": "khaled_v,zane_smith,saud_un"
   },
   {
     "username": "mariam_k",
-    "firstname": "Mariam",
-    "lastname": "Khalil",
     "email": "mariam.khalil@yahoo.com",
     "password": "MK_private_pass",
-    "bio": "Artist and creator. Expressing myself through colors and textures.",
-    "followings": ["layla_m", "zane_smith", "reem_sky"],
-    "followers": ["layla_m", "reem_sky", "fatima_z"],
-    "createdAt": "2026-01-22 13:10:00"
+    "firstname": "Mariam",
+    "lastname": "Khalil",
+    "bio": "Kindness is free, sprinkle it everywhere.",
+    "followings": "layla_m,zane_smith,reem_sky",
+    "followers": "layla_m,reem_sky,fatima_z"
   },
   {
     "username": "faisal_a",
-    "firstname": "Faisal",
-    "lastname": "Aziz",
     "email": "faisal.aziz.9@gmail.com",
     "password": "f_aziz_x99",
-    "bio": "Sports fan and part-time coach. Dedicated to the game.",
-    "followings": ["ahmed_99", "khaled_v", "abdullah_k"],
-    "followers": ["youssef_j", "abdullah_k", "khaled_v"],
-    "createdAt": "2026-01-23 10:50:00"
+    "firstname": "Faisal",
+    "lastname": "Aziz",
+    "bio": "Photography is my passion.",
+    "followings": "ahmed_99,khaled_v,abdullah_k",
+    "followers": "youssef_j,abdullah_k,khaled_v"
   },
   {
     "username": "huda_r",
-    "firstname": "Huda",
-    "lastname": "Rashid",
     "email": "huda.rashid.r@hotmail.com",
     "password": "huda_r_secure",
-    "bio": "Gardening enthusiast. My backyard is my happy place.",
-    "followings": ["ahmed_99", "fatima_z", "saud_un"],
-    "followers": ["youssef_j", "saud_un", "fatima_z"],
-    "createdAt": "2026-01-24 09:00:00"
+    "firstname": "Huda",
+    "lastname": "Rashid",
+    "bio": "Family first, always.",
+    "followings": "ahmed_99,fatima_z,saud_un",
+    "followers": "youssef_j,saud_un,fatima_z"
   },
   {
     "username": "zane_smith",
-    "firstname": "Zane",
-    "lastname": "Smith",
     "email": "zane.smith@outlook.com",
     "password": "zane_smith_11",
-    "bio": "Music producer and vinyl collector. Sound is everything.",
-    "followings": ["youssef_j", "mona_lisa", "ibrahim_d"],
-    "followers": ["mariam_k", "ibrahim_d", "youssef_j"],
-    "createdAt": "2026-01-25 11:40:00"
+    "firstname": "Zane",
+    "lastname": "Smith",
+    "bio": "Hiking and outdoor adventures.",
+    "followings": "youssef_j,mona_lisa,ibrahim_d",
+    "followers": "mariam_k,ibrahim_d,youssef_j"
   },
   {
     "username": "mona_lisa",
-    "firstname": "Mona",
-    "lastname": "Bakir",
     "email": "mona.bakir.lisa@yahoo.com",
     "password": "monal_art_22",
-    "bio": "Museum hopper and history buff. Learning from the past to build the future.",
-    "followings": ["nour_star", "reem_sky", "amal_hope"],
-    "followers": ["zane_smith", "amal_hope", "nour_star"],
-    "createdAt": "2026-01-26 14:15:00"
+    "firstname": "Mona",
+    "lastname": "Bakir",
+    "bio": "Painting my own world.",
+    "followings": "nour_star,reem_sky,amal_hope",
+    "followers": "zane_smith,amal_hope,nour_star"
   },
   {
     "username": "saud_un",
-    "firstname": "Saud",
-    "lastname": "Nasser",
     "email": "saud.nasser.9@gmail.com",
     "password": "saud_nas_x",
-    "bio": "Chess player and strategic thinker. Always thinking three moves ahead.",
-    "followings": ["huda_r", "abdullah_k", "jassem_x"],
-    "followers": ["jassem_x", "huda_r", "abdullah_k"],
-    "createdAt": "2026-01-27 08:55:00"
+    "firstname": "Saud",
+    "lastname": "Nasser",
+    "bio": "Classic cars collector.",
+    "followings": "huda_r,abdullah_k,jassem_x",
+    "followers": "jassem_x,huda_r,abdullah_k"
   },
   {
     "username": "reem_sky",
-    "firstname": "Reem",
-    "lastname": "Farah",
     "email": "reem.sky.farah@hotmail.com",
     "password": "reem_sky_99",
-    "bio": "Nature lover and hiker. Finding beauty in the wild.",
-    "followings": ["mariam_k", "dana_blue", "lina_art"],
-    "followers": ["mona_lisa", "lina_art", "mariam_k"],
-    "createdAt": "2026-01-28 17:20:00"
+    "firstname": "Reem",
+    "lastname": "Farah",
+    "bio": "Star gazing and night drives.",
+    "followings": "mariam_k,dana_blue,lina_art",
+    "followers": "mona_lisa,lina_art,mariam_k"
   },
   {
     "username": "abdullah_k",
-    "firstname": "Abdullah",
-    "lastname": "Karim",
     "email": "abd.karim.k@outlook.com",
     "password": "abd_k_777",
-    "bio": "Podcast host and storyteller. Exploring human experiences through audio.",
-    "followings": ["faisal_a", "ibrahim_d", "badir_90"],
-    "followers": ["saud_un", "badir_90", "faisal_a"],
-    "createdAt": "2026-01-29 10:05:00"
+    "firstname": "Abdullah",
+    "lastname": "Karim",
+    "bio": "Music is the language of the soul.",
+    "followings": "faisal_a,ibrahim_d,badir_90",
+    "followers": "saud_un,badir_90,faisal_a"
   },
   {
     "username": "fatima_z",
-    "firstname": "Fatima",
-    "lastname": "Zahra",
     "email": "fatima.zahra.z@yahoo.com",
     "password": "fz_pass_2026",
-    "bio": "Yoga practitioner and wellness advocate. Mind, body, and soul.",
-    "followings": ["huda_r", "amal_hope", "salma_w"],
-    "followers": ["salma_w", "huda_r", "amal_hope"],
-    "createdAt": "2026-01-30 12:40:00"
+    "firstname": "Fatima",
+    "lastname": "Zahra",
+    "bio": "Peace, love, and positivity.",
+    "followings": "huda_r,amal_hope,salma_w",
+    "followers": "salma_w,huda_r,amal_hope"
   },
   {
     "username": "ibrahim_d",
-    "firstname": "Ibrahim",
-    "lastname": "Darwish",
     "email": "ibra.darwish.d@gmail.com",
     "password": "id_darwish_101",
-    "bio": "Woodworking hobbyist. Creating functional art from timber.",
-    "followings": ["zane_smith", "jassem_x", "turki_k"],
-    "followers": ["abdullah_k", "turki_k", "zane_smith"],
-    "createdAt": "2026-01-31 09:30:00"
+    "firstname": "Ibrahim",
+    "lastname": "Darwish",
+    "bio": "Ocean lover and swimmer.",
+    "followings": "zane_smith,jassem_x,turki_k",
+    "followers": "abdullah_k,turki_k,zane_smith"
   },
   {
     "username": "amal_hope",
-    "firstname": "Amal",
-    "lastname": "Idris",
     "email": "amal.idris.hope@hotmail.com",
     "password": "amal_hope_33",
-    "bio": "Optimist and volunteer. Small acts of kindness change the world.",
-    "followings": ["mona_lisa", "dana_blue", "maha_glow"],
-    "followers": ["fatima_z", "maha_glow", "mona_lisa"],
-    "createdAt": "2026-02-01 15:00:00"
+    "firstname": "Amal",
+    "lastname": "Idris",
+    "bio": "Believe in the magic of new beginnings.",
+    "followings": "mona_lisa,dana_blue,maha_glow",
+    "followers": "fatima_z,maha_glow,mona_lisa"
   },
   {
     "username": "jassem_x",
-    "firstname": "Jassem",
-    "lastname": "Mubarak",
     "email": "jassem.mubarak.x@outlook.com",
     "password": "jx_mubar_82",
-    "bio": "Car enthusiast and DIY mechanic. Nothing beats the sound of a classic engine.",
-    "followings": ["saud_un", "lina_art", "nasser_1"],
-    "followers": ["ibrahim_d", "nasser_1", "saud_un"],
-    "createdAt": "2026-02-02 11:22:00"
+    "firstname": "Jassem",
+    "lastname": "Mubarak",
+    "bio": "History buff and museum visitor.",
+    "followings": "saud_un,lina_art,nasser_1",
+    "followers": "ibrahim_d,nasser_1,saud_un"
   },
   {
     "username": "dana_blue",
-    "firstname": "Dana",
-    "lastname": "Sultan",
     "email": "dana.sultan.blue@yahoo.com",
     "password": "dana_s_blue",
-    "bio": "Sea lover and scuba diver. The ocean is my true home.",
-    "followings": ["reem_sky", "badir_90", "latifa_m"],
-    "followers": ["amal_hope", "latifa_m", "reem_sky"],
-    "createdAt": "2026-02-03 13:45:00"
+    "firstname": "Dana",
+    "lastname": "Sultan",
+    "bio": "Sky is not the limit, it's just the view.",
+    "followings": "reem_sky,badir_90,latifa_m",
+    "followers": "amal_hope,latifa_m,reem_sky"
+  },
+  {
+    "username": "hamad_q",
+    "email": "hamad.qasim.q@gmail.com",
+    "password": "h_qasim_991",
+    "firstname": "Hamad",
+    "lastname": "Qasim",
+    "bio": "Sports and healthy lifestyle.",
+    "followings": "lina_art,salma_w,majed_o",
+    "followers": "majed_o,salma_w,lina_art"
+  },
+  {
+    "username": "lina_art",
+    "email": "lina.tariq.art@hotmail.com",
+    "password": "lina_t_art",
+    "firstname": "Lina",
+    "lastname": "Tariq",
+    "bio": "Creating memories every day.",
+    "followings": "reem_sky,turki_k,rawan_v",
+    "followers": "jassem_x,hamad_q,rawan_v"
+  },
+  {
+    "username": "badir_90",
+    "email": "badir.amer.90@outlook.com",
+    "password": "b_amer_9090",
+    "firstname": "Badir",
+    "lastname": "Amer",
+    "bio": "Weekend vibes only.",
+    "followings": "abdullah_k,maha_glow,ali_pro",
+    "followers": "dana_blue,ali_pro,abdullah_k"
+  },
+  {
+    "username": "salma_w",
+    "email": "salma.waleed.w@yahoo.com",
+    "password": "salma_w_24",
+    "firstname": "Salma",
+    "lastname": "Waleed",
+    "bio": "Flowers and garden lover.",
+    "followings": "fatima_z,nasser_1,hanan_h",
+    "followers": "hamad_q,hanan_h,nasser_1"
+  },
+  {
+    "username": "turki_k",
+    "email": "turki.khalid.k@gmail.com",
+    "password": "tk_khalid_55",
+    "firstname": "Turki",
+    "lastname": "Khalid",
+    "bio": "Always learning something new.",
+    "followings": "ibrahim_d,latifa_m,sultan_z",
+    "followers": "lina_art,sultan_z,ibrahim_d"
+  },
+  {
+    "username": "maha_glow",
+    "email": "maha.saad.glow@hotmail.com",
+    "password": "maha_g_26",
+    "firstname": "Maha",
+    "lastname": "Saad",
+    "bio": "Fashion and style enthusiast.",
+    "followings": "amal_hope,majed_o,jawaher_a",
+    "followers": "badir_90,jawaher_a,amal_hope"
+  },
+  {
+    "username": "nasser_1",
+    "email": "nasser.fahad.1@outlook.com",
+    "password": "n_fahad_11",
+    "firstname": "Nasser",
+    "lastname": "Fahad",
+    "bio": "City lights and quiet nights.",
+    "followings": "jassem_x,rawan_v,saif_n",
+    "followers": "salma_w,saif_n,jassem_x"
+  },
+  {
+    "username": "latifa_m",
+    "email": "latifa.mahmoud.m@yahoo.com",
+    "password": "l_mahmoud_88",
+    "firstname": "Latifa",
+    "lastname": "Mahmoud",
+    "bio": "Life is a beautiful journey.",
+    "followings": "dana_blue,ali_pro,ghada_f",
+    "followers": "turki_k,ghada_f,dana_blue"
+  },
+  {
+    "username": "majed_o",
+    "email": "majed.othman.o@gmail.com",
+    "password": "majed_o_92",
+    "firstname": "Majed",
+    "lastname": "Othman",
+    "bio": "Horse riding and desert trips.",
+    "followings": "hamad_q,hanan_h,khalil_t",
+    "followers": "maha_glow,khalil_t,hamad_q"
+  },
+  {
+    "username": "rawan_v",
+    "email": "rawan.yasin.v@hotmail.com",
+    "password": "rawan_y_30",
+    "firstname": "Rawan",
+    "lastname": "Yasin",
+    "bio": "Pizza lover forever.",
+    "followings": "lina_art,sultan_z,safia_s",
+    "followers": "nasser_1,safia_s,lina_art"
+  },
+  {
+    "username": "ali_pro",
+    "email": "ali.abbas.pro@outlook.com",
+    "password": "ali_pro_pass",
+    "firstname": "Ali",
+    "lastname": "Abbas",
+    "bio": "Exploring the world, one step at a time.",
+    "followings": "badir_90,jawaher_a,walid_m",
+    "followers": "latifa_m,walid_m,badir_90"
+  },
+  {
+    "username": "hanan_h",
+    "email": "hanan.hamad.h@yahoo.com",
+    "password": "hanan_h_32",
+    "firstname": "Hanan",
+    "lastname": "Hamad",
+    "bio": "Optimism is my middle name.",
+    "followings": "salma_w,saif_n,arwa_e",
+    "followers": "majed_o,arwa_e,salma_w"
+  },
+  {
+    "username": "sultan_z",
+    "email": "sultan.zaki.z@gmail.com",
+    "password": "sultan_z_99",
+    "firstname": "Sultan",
+    "lastname": "Zaki",
+    "bio": "Passionate about photography.",
+    "followings": "turki_k,ghada_f,bassam_h",
+    "followers": "rawan_v,bassam_h,turki_k"
+  },
+  {
+    "username": "jawaher_a",
+    "email": "jawaher.ahmed.a@hotmail.com",
+    "password": "jawaher_a_34",
+    "firstname": "Jawaher",
+    "lastname": "Ahmed",
+    "bio": "Jewelry and traditional art.",
+    "followings": "maha_glow,khalil_t,najla_o",
+    "followers": "ali_pro,najla_o,maha_glow"
+  },
+  {
+    "username": "saif_n",
+    "email": "saif.nabeel.n@outlook.com",
+    "password": "saif_n_pass",
+    "firstname": "Saif",
+    "lastname": "Nabeel",
+    "bio": "Video games and movies fan.",
+    "followings": "nasser_1,safia_s,hasan_k",
+    "followers": "hanan_h,hasan_k,nasser_1"
+  },
+  {
+    "username": "ghada_f",
+    "email": "ghada.fouad.f@yahoo.com",
+    "password": "ghada_f_36",
+    "firstname": "Ghada",
+    "lastname": "Fouad",
+    "bio": "Baking is my secret talent.",
+    "followings": "latifa_m,walid_m,shaikha_r",
+    "followers": "sultan_z,shaikha_r,latifa_m"
+  },
+  {
+    "username": "khalil_t",
+    "email": "khalil.talal.t@gmail.com",
+    "password": "khalil_t_37",
+    "firstname": "Khalil",
+    "lastname": "Talal",
+    "bio": "Family trips and gatherings.",
+    "followings": "majed_o,arwa_e,anwar_v",
+    "followers": "jawaher_a,anwar_v,majed_o"
+  },
+  {
+    "username": "safia_s",
+    "email": "safia.saleh.s@hotmail.com",
+    "password": "safia_s_38",
+    "firstname": "Safia",
+    "lastname": "Saleh",
+    "bio": "The best is yet to come.",
+    "followings": "rawan_v,bassam_h,dalal_m",
+    "followers": "saif_n,dalal_m,rawan_v"
+  },
+  {
+    "username": "walid_m",
+    "email": "walid.musa.m@outlook.com",
+    "password": "walid_m_39",
+    "firstname": "Walid",
+    "lastname": "Musa",
+    "bio": "Photography enthusiast.",
+    "followings": "ali_pro,najla_o,mohammed_s",
+    "followers": "ghada_f,mohammed_s,ali_pro"
+  },
+  {
+    "username": "arwa_e",
+    "email": "arwa.ezzat.e@yahoo.com",
+    "password": "arwa_e_secure",
+    "firstname": "Arwa",
+    "lastname": "Ezzat",
+    "bio": "Always chasing my dreams.",
+    "followings": "hanan_h,hasan_k,khulood_a",
+    "followers": "khalil_t,khulood_a,hanan_h"
+  },
+  {
+    "username": "bassam_h",
+    "email": "bassam.habib.h@gmail.com",
+    "password": "bassam_41_pass",
+    "firstname": "Bassam",
+    "lastname": "Habib",
+    "bio": "Basketball lover.",
+    "followings": "sultan_z,shaikha_r,yasin_g",
+    "followers": "safia_s,yasin_g,sultan_z"
+  },
+  {
+    "username": "najla_o",
+    "email": "najla.omar.o@hotmail.com",
+    "password": "najla_o_42",
+    "firstname": "Najla",
+    "lastname": "Omar",
+    "bio": "Life is full of surprises.",
+    "followings": "jawaher_a,anwar_v,faten_w",
+    "followers": "walid_m,faten_w,jawaher_a"
+  },
+  {
+    "username": "hasan_k",
+    "email": "hasan.kamal.k@outlook.com",
+    "password": "hasan_k_43",
+    "firstname": "Hasan",
+    "lastname": "Kamal",
+    "bio": "Exploring local food spots.",
+    "followings": "saif_n,dalal_m,ahmed_99",
+    "followers": "arwa_e,ahmed_99,saif_n"
+  },
+  {
+    "username": "shaikha_r",
+    "email": "shaikha.radi.r@yahoo.com",
+    "password": "shaikha_r_44",
+    "firstname": "Shaikha",
+    "lastname": "Radi",
+    "bio": "Happiness is a choice.",
+    "followings": "ghada_f,mohammed_s,sara_dev",
+    "followers": "bassam_h,sara_dev,ghada_f"
+  },
+  {
+    "username": "anwar_v",
+    "email": "anwar.basim.v@gmail.com",
+    "password": "anwar_v_45",
+    "firstname": "Anwar",
+    "lastname": "Basim",
+    "bio": "Striving for a better tomorrow.",
+    "followings": "khalil_t,khulood_a,omar_tech",
+    "followers": "najla_o,omar_tech,khalil_t"
+  },
+  {
+    "username": "dalal_m",
+    "email": "dalal.moath.m@hotmail.com",
+    "password": "dalal_m_46",
+    "firstname": "Dalal",
+    "lastname": "Moath",
+    "bio": "Reading and writing fan.",
+    "followings": "safia_s,yasin_g,layla_m",
+    "followers": "hasan_k,layla_m,safia_s"
+  },
+  {
+    "username": "mohammed_s",
+    "email": "moe.sami.s@outlook.com",
+    "password": "moe_sami_47",
+    "firstname": "Mohammed",
+    "lastname": "Sami",
+    "bio": "Football and sports fan.",
+    "followings": "walid_m,faten_w,khaled_v",
+    "followers": "shaikha_r,khaled_v,walid_m"
+  },
+  {
+    "username": "khulood_a",
+    "email": "khulood.adel.a@yahoo.com",
+    "password": "khulood_a_48",
+    "firstname": "Khulood",
+    "lastname": "Adel",
+    "bio": "Enjoying the little things.",
+    "followings": "arwa_e,ahmed_99,nour_star",
+    "followers": "anwar_v,nour_star,arwa_e"
+  },
+  {
+    "username": "yasin_g",
+    "email": "yasin.ghani.g@gmail.com",
+    "password": "yasin_g_49",
+    "firstname": "Yasin",
+    "lastname": "Ghani",
+    "bio": "Music and arts lover.",
+    "followings": "bassam_h,sara_dev,youssef_j",
+    "followers": "dalal_m,youssef_j,bassam_h"
+  },
+  {
+    "username": "faten_w",
+    "email": "faten.wafi.w@hotmail.com",
+    "password": "faten_w_50",
+    "firstname": "Faten",
+    "lastname": "Wafi",
+    "bio": "Stay positive and stay happy.",
+    "followings": "najla_o,omar_tech,mariam_k",
+    "followers": "mohammed_s,mariam_k,najla_o"
   }
 ]

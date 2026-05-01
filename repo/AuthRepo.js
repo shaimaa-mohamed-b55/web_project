@@ -1,5 +1,6 @@
 import { promises as fs } from "fs";
 import path from "path";
+<<<<<<< HEAD
 const dataPath = path.join(process.cwd(), "data", "users.json");
 
 class AuthRepo {
@@ -12,6 +13,29 @@ class AuthRepo {
       },
     });
   }
+=======
+import { PrismaClient } from "@prisma/client";
+
+
+const prisma = new PrismaClient();
+const dataPath = path.join(process.cwd(), "data", "auth.json");
+
+class AuthRepo {
+    async getAll() {
+        // const data = await fs.readFile(dataPath, "utf-8");
+        // return JSON.parse(data);
+        return await prisma.user.findMany({
+            select:{
+                id: true,
+                username: true,
+                email: true,
+            },
+            orderBy: {
+                createdAt: "desc",
+            },
+            
+        });
+>>>>>>> ddc339ff47af3664b313912e282e5d2f6b927c7c
 
   // async save(items) {
   //     await fs.writeFile(dataPath, JSON.stringify(items, null, 4));
@@ -27,8 +51,20 @@ class AuthRepo {
     });
   }
 
+<<<<<<< HEAD
   async create(data) {
     // const all = await this.getAll();
+=======
+    async getById(id) {
+        // const all = await this.getAll();
+        // return all.find(b => b.id === Number(id));
+        return await prisma.user.findUnique({
+            where: {
+                id:Number(id)
+            },
+        });
+    }
+>>>>>>> ddc339ff47af3664b313912e282e5d2f6b927c7c
 
     // const maxId = all.length>0 ? Math.max(...all.map(b => b.id)) : 0;
 
@@ -68,6 +104,7 @@ class AuthRepo {
     });
   }
 
+<<<<<<< HEAD
   async delete(id) {
     // const all = await this.getAll();
     // const index = all.findIndex(b => b.id === Number(id));
@@ -81,6 +118,39 @@ class AuthRepo {
       },
     });
   }
+=======
+
+    async update(id, data) {
+        // const all = await this.getAll();
+        // const index = all.findIndex(b => b.id === Number(id));
+        // if (index === -1) return null;
+        
+        // all[index] = { ...all[index], ...data, id: Number(id) };
+        // await this.save(all);
+        // return all[index];
+        return await prisma.user.update({
+            where: {
+                id: Number(id),
+            },
+            data: data,
+        });
+    }
+
+
+    async delete(id) {
+        // const all = await this.getAll();
+        // const index = all.findIndex(b => b.id === Number(id));
+        // if (index === -1) return false;
+        // all.splice(index, 1);
+        // await this.save(all);
+        // return true;
+        return await prisma.user.delete({
+            where: {
+                id: id,
+            },
+        });
+    }
+>>>>>>> ddc339ff47af3664b313912e282e5d2f6b927c7c
 }
 
 export default new AuthRepo();

@@ -6,8 +6,7 @@ const prisma = new PrismaClient();
 
 async function readJson(name) {
   const file = path.join(process.cwd(), "data", name);
-  const data = await fs.readFile(file, "utf-8");
-  return JSON.parse(data);
+  return JSON.parse(await fs.readFile(file, "utf-8"));
 }
 
 async function seedUsers(name, items) {
@@ -28,35 +27,106 @@ async function seedUsers(name, items) {
           lastname: item.lastname,
           profile: {
             create: {
-              username: item.username,
-              firstname: item.firstname,
-              lastname: item.lastname,
-              email: item.email,
-              password: item.password,
-
               bio: item.bio || "",
               followings: Array.isArray(item.followings)
-                ? item.followings.join(",") || ""
-                : item.followings,
+                ? item.followings.join(",")
+                : String(item.followings || ""),
               followers: Array.isArray(item.followers)
-                ? item.followers.join(",") || ""
-                : item.followers,
+                ? item.followers.join(",")
+                : String(item.followers || ""),
             },
           },
         },
       });
     }
-    console.log(`Seeded ${items.length} ${name}`);
+    console.log(`Seeded ${items.length} ${name} successfully!`);
+  } catch (e) {
+    console.error(`Error in seedUsers: ${e.message}`);
+  }
+}
+
+async function seedFeed(name, items) {
+  try {
+    const existing = await prisma.post.findMany();
+    if (existing.length > 0) {
+      console.log(`Skipped ${name} - already has ${existing.length} rows`);
+      return;
+    }
+
+    for (const item of items) {
+      const postAuthor = await prisma.user.findUnique({
+        where: { username: item.username },
+      });
+
+      if (!postAuthor) continue;
+
+      // 1. تجهيز اللايكات بشكل نظيف لتجنب خطأ "userId is missing"
+      const validLikes = [];
+      for (const likeUser of item.likes || []) {
+        const liker = await prisma.user.findUnique({
+          where: { username: likeUser },
+        });
+        if (liker) {
+          validLikes.push({
+            user: { connect: { id: liker.id } },
+          });
+        }
+      }
+
+      // 2. إنشاء المنشور مع التعليقات واللايكات
+      await prisma.post.create({
+        data: {
+          post: item.post,
+          createdAt: new Date(item.createdAt),
+          author: { connect: { id: postAuthor.id } },
+
+          comments: {
+            create: await Promise.all(
+              (item.comments || []).map(async (c) => {
+                const commentAuthor = await prisma.user.findUnique({
+                  where: { username: c.username },
+                });
+                return {
+                  comment: c.text,
+                  username: c.username,
+                  createdAt: new Date(),
+                  author: {
+                    connect: { id: commentAuthor?.id || postAuthor.id },
+                  },
+                };
+              }),
+            ),
+          },
+
+          likes: {
+            create: validLikes,
+          },
+        },
+      });
+    }
+    console.log(`Successfully seeded posts, comments, and likes!`);
   } catch (e) {
     if (e.code === "P2021" || /does not exist|no such table/i.test(e.message)) {
       console.log(`Skipped ${name} - table not in schema yet`);
-    } else throw e;
+    } else {
+      console.error(`Error in seedFeed: ${e.message}`);
+    }
   }
 }
 
 async function main() {
-  const usersData = await readJson("users.json");
+  // مسح البيانات القديمة لضمان عدم حدوث تكرار (Constraint Error)
+  await prisma.like.deleteMany({});
+  await prisma.comment.deleteMany({});
+  await prisma.post.deleteMany({});
+  await prisma.profile.deleteMany({});
+  await prisma.user.deleteMany({});
+
+  const usersData = await readJson("profile.json");
+  const feedData = await readJson("feed.json");
+
   await seedUsers("users and profiles", usersData);
+  await seedFeed("feed", feedData);
 }
 
 main()
