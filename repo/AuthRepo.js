@@ -42,12 +42,11 @@ class AuthRepo {
 
         return prisma.user.findUnique({ 
             where:
-             { id:
-                 Number(id) 
-                }
-             });
+            { id:
+                Number(id) 
+            }
+        });
     }
-
 
     async create(data) {
         // const all = await this.getAll();
@@ -89,7 +88,6 @@ class AuthRepo {
             data: data,
         });
     }
-
 
     async delete(id) {
         // const all = await this.getAll();
