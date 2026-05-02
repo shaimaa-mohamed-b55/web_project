@@ -11,15 +11,18 @@ class AuthRepo {
         // const data = await fs.readFile(dataPath, "utf-8");
         // return JSON.parse(data);
         return await prisma.user.findMany({
-            select:{
+            select: {
                 id: true,
                 username: true,
                 email: true,
+                firstname: true,
+                lastname: true,
+                createdAt: true,
             },
             orderBy: {
                 createdAt: "desc",
             },
-            
+
         });
 
     }
@@ -31,29 +34,36 @@ class AuthRepo {
     async getById(id) {
         // const all = await this.getAll();
         // return all.find(b => b.id === Number(id));
-        return await prisma.user.findUnique({
-            where: {
-                id:Number(id)
-            },
-        });
+        // return await prisma.user.findUnique({
+        //     where: {
+        //         id:Number(id)
+        //     },
+        // });
+
+        return prisma.user.findUnique({ 
+            where:
+             { id:
+                 Number(id) 
+                }
+             });
     }
 
 
     async create(data) {
         // const all = await this.getAll();
 
-            // const maxId = all.length>0 ? Math.max(...all.map(b => b.id)) : 0;
-            
-            const newItem = {
+        // const maxId = all.length>0 ? Math.max(...all.map(b => b.id)) : 0;
+
+        const newItem = {
             // id: maxId+1,
             username: data.username,
             lastname: data.lastname,
             firstname: data.firstname,
             email: data.email,
             password: data.password,
-            followings: Number(data.followings|| 0),
-            followers: Number(data.followers || 0),
-            createdAt: data.createdAt,
+            // followings: Number(data.followings || 0),
+            // followers: Number(data.followers || 0),
+            createdAt: data.createdAt ? new Date(data.createdAt) : undefined,
         };
 
         // all.push(newItem);
@@ -64,13 +74,11 @@ class AuthRepo {
         });
     }
 
-
-
     async update(id, data) {
         // const all = await this.getAll();
         // const index = all.findIndex(b => b.id === Number(id));
         // if (index === -1) return null;
-        
+
         // all[index] = { ...all[index], ...data, id: Number(id) };
         // await this.save(all);
         // return all[index];

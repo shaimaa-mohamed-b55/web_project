@@ -1,14 +1,24 @@
-import { promises as fs } from "fs";
-import path from "path";
+// import { promises as fs } from "fs";
+// import path from "path";
 
-const dataPath = path.join(process.cwd(), "data", "feed.json");
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
 
-
+// const dataPath = path.join(process.cwd(), "data", "feed.json");
 
 class FeedRepo {
     async getAll() {
-        const data = await fs.readFile(dataPath, "utf-8");
-        return JSON.parse(data);
+        // const data = await fs.readFile(dataPath, "utf-8");
+        // return JSON.parse(data);
+        return prisma.post.findMany({
+            include: {
+                comments: true,
+                likes: true,
+            },
+            orderby:{
+                createdAt: "desc"
+            },
+        });
     }
 
     async save(items) {
@@ -16,45 +26,50 @@ class FeedRepo {
     }
 
     async getById(id) {
-        const all = await this.getAll();
-        return all.find(b => b.id === id);
+        // const all = await this.getAll();
+        // return all.find(b => b.id === id);
+        // return prisma.feed.findUnique({ where: { id } });
+        return prisma.post.findUnique({where: { id },});
     }
 
-
-    
-// [
-//     {
-//         "id": "user-name Date.now()",
-//         "username": "username",
-//         "post": "post",
-//         "createdAt":" new Date()",
-//         "likes": ["firstLike","secondLike"],
-//         "comments":[
-//         {   "username": "username",
-//             "text": "commenttext",
-//             "createdAt": "Date AM"
-//         }
-//     ]
-//     }
-// ]
+    // [
+    //     {
+    //         "id": "user-name Date.now()",
+    //         "username": "username",
+    //         "post": "post",
+    //         "createdAt":" new Date()",
+    //         "likes": ["firstLike","secondLike"],
+    //         "comments":[
+    //         {   "username": "username",
+    //             "text": "commenttext",
+    //             "createdAt": "Date AM"
+    //         }
+    //     ]
+    //     }
+    // ]
 
     async create(data) {
-        const all = await this.getAll();
-        const newItem = {
-            id:`${data.username}_${Date.now()} `,
-            username: data.username,
-            post: data.post,
-            createdAt: new Date().toISOString(),
-            likes: [],
-            comments: []
+        // const all = await this.getAll();
+        // const newItem = {
+        //     id: `${data.username}_${Date.now()} `,
+        //     username: data.username,
+        //     post: data.post,
+        //     createdAt: new Date().toISOString(),
+        //     likes: [],
+        //     comments: []
 
-        };
-        all.push(newItem);
-        await this.save(all);
-        return newItem;
+        // };
+        // all.push(newItem);
+        // await this.save(all);
+        // return newItem;
+        return prisma.post.create({
+            data: { 
+                text: data.post,
+                authorId: data.userId
+            }
+        });
     }
-
-
+    
 
     async update(id, data) {
         const all = await this.getAll();
