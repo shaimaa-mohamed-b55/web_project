@@ -15,38 +15,23 @@ class FeedRepo {
                 comments: true,
                 likes: true,
             },
-            orderby:{
+            orderBy:{
                 createdAt: "desc"
             },
         });
     }
 
-    async save(items) {
-        await fs.writeFile(dataPath, JSON.stringify(items, null, 4));
-    }
+    // async save(items) {
+    //     await fs.writeFile(dataPath, JSON.stringify(items, null, 4));
+    // }
 
     async getById(id) {
         // const all = await this.getAll();
         // return all.find(b => b.id === id);
         // return prisma.feed.findUnique({ where: { id } });
-        return prisma.post.findUnique({where: { id },});
+        return prisma.post.findUnique({where: { id }});
     }
 
-    // [
-    //     {
-    //         "id": "user-name Date.now()",
-    //         "username": "username",
-    //         "post": "post",
-    //         "createdAt":" new Date()",
-    //         "likes": ["firstLike","secondLike"],
-    //         "comments":[
-    //         {   "username": "username",
-    //             "text": "commenttext",
-    //             "createdAt": "Date AM"
-    //         }
-    //     ]
-    //     }
-    // ]
 
     async create(data) {
         // const all = await this.getAll();
@@ -72,21 +57,31 @@ class FeedRepo {
     
 
     async update(id, data) {
-        const all = await this.getAll();
-        const index = all.findIndex(b => b.id === id);
-        if (index === -1) return null;
-        all[index] = { ...all[index], ...data, id: id };
-        await this.save(all);
-        return all[index];
+        // const all = await this.getAll();
+        // const index = all.findIndex(b => b.id === id);
+        // if (index === -1) return null;
+        // all[index] = { ...all[index], ...data, id: id };
+        // await this.save(all);
+        // return all[index];
+        return prisma.post.update({
+            where: { id: Number(id) },
+            data: {
+                text: data.post,
+            },
+        });
+
     }
 
     async delete(id) {
-        const all = await this.getAll();
-        const index = all.findIndex(b => b.id === id);
-        if (index === -1) return false;
-        all.splice(index, 1);
-        await this.save(all);
-        return true;
+        // const all = await this.getAll();
+        // const index = all.findIndex(b => b.id === id);
+        // if (index === -1) return false;
+        // all.splice(index, 1);
+        // await this.save(all);
+        // return true;
+        return prisma.post.delete({
+            where: { id: Number(id) },
+        });
     }
 }
 

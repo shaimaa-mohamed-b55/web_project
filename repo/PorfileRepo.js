@@ -13,17 +13,23 @@ class ProfileRepo {
         // return JSON.parse(data);
     return await prisma.profile.findMany({
             include: {
-                user: true,   // include user details if needed
+                 user: {
+                    select: {
+                        id: true,
+                        username: true,
+                        firstname: true,
+                        lastname: true,
+                        email: true,
+                    },
+                },
             },
-            orderBy: {
-                id: 'asc',    // or any other field like bio
-            },
+            orderBy: { id: "asc" },
         });
     }
 
-    async save(items) {
-        await fs.writeFile(dataPath, JSON.stringify(items, null, 4));
-    }
+    // async save(items) {
+    //     await fs.writeFile(dataPath, JSON.stringify(items, null, 4));
+    // }
 
     async getById(id) {
         // const all = await this.getAll();
@@ -31,7 +37,15 @@ class ProfileRepo {
     return await prisma.profile.findUnique({
             where: { id: Number(id) },
             include: {
-                user: true,
+                user: {
+                    select: {
+                        id: true,
+                        username: true,
+                        firstname: true,
+                        lastname: true,
+                        email: true,
+                    },
+                },
             },
         });
     }
@@ -82,6 +96,28 @@ class ProfileRepo {
             where: { id: Number(id) },
         });
     }
+
+    // helper used in the api 
+    async getByUsername(username) {
+    return await prisma.profile.findFirst({
+        where: { 
+            user: {
+                username
+            } 
+        },
+        include: {
+            user: { select: 
+                {
+                    id: true, 
+                    username: true, 
+                    firstname: true, 
+                    lastname: true, 
+                    email: true 
+                } 
+            }
+        }
+    });
+}
 }
 
 export default new ProfileRepo();

@@ -1,21 +1,38 @@
 import { NextResponse } from "next/server";
 import feedRepo from "@/repos/FeedRepo";
+import { PrismaClient } from "@prisma/client";
 
+const prisma = new PrismaClient();
+ 
 export async function GET(request) {
-    let feeds = await feedRepo.getAll();
+    // let feeds = await feedRepo.getAll();
 
     const { searchParams } = new URL(request.url);
     const username = searchParams.get("username");
 
-    if(username) feeds = feeds.filter(t=>t.username === username);
+    if (username){
+        const feeds=await prisma.post.findMany({
+            where: { author: { username } },
+            include: {
+                author: { select: { id: true, username: true, firstname: true, lastname: true } },
+                comments: {
+                    include: { user: { select: { id: true, username: true, firstname: true, lastname: true } } }
+                },
+                likes: {
+                    include: { user: { select: { id: true, username: true, firstname: true, lastname: true } } }
+                }
+            },
+            orderBy: { createdAt: "desc" }
+        });
+        return NextResponse.json(feeds);
+    }
 
+    const feeds = await feedRepo.getAll();
     return NextResponse.json(feeds);
 }
 
 export async function POST(request) {
     const body = await request.json();
-
-
         //     "id": "user-name Date.now()",
         // "createdAt":" new Date()",
         // "likes": ["firstLike","secondLike"],
@@ -32,6 +49,8 @@ export async function POST(request) {
         );
     }
 
+    
+
     const profileUser = await profileRepo.getById(body.username);
     if(!profileUser){
         return NextResponse.json(
@@ -39,14 +58,20 @@ export async function POST(request) {
             
         );
     }
-
-    const newFeed = {
-        ...body,
-        likes: [],
-        comments: [],
-        createdAt: new Date().toLocaleString()
-    };
-
-    const created = await feedRepo.create(newFeed);
+    const user = await prisma.user.findUnique({ where: { username: body.username } });
+    if (!user) {
+        return NextResponse.json({ error: "User does not exist" }, { status: 400 });
+    }
+    const created = await feedRepo.create({ post: body.post, userId: user.id });
     return NextResponse.json(created, { status: 201 });
+
+    // const newFeed = {
+    //     ...body,
+    //     likes: [],
+    //     comments: [],
+    //     createdAt: new Date().toLocaleString()
+    // };
+
+    // const created = await feedRepo.create(newFeed);
+    // return NextResponse.json(created, { status: 201 });
 }
