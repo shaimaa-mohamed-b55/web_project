@@ -1,13 +1,13 @@
 [
   {
-    "id": 1,
+    "id":1,
     "username": "username",
     "lastname": "lastname",
     "firstname": "firstname",
     "email": "email",
     "password": "password",
-    "followings": 0,
-    "followers": 0,
+    "followings": [],
+    "followers": [],
     "createdAt": "Date()"
   }
 ,

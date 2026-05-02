@@ -17,19 +17,21 @@ model User {
   firstname  String
   email      String   @unique
   password   String
-  followings Int       @default(0)
-  followers  Int       @default(0)
   createdAt  DateTime @default(now())
+  // relation with the profile, post and like models
   profile   Profile?
   posts     Post[]
   likes      Like[]
+  comments  Comment[]
+  followedBy Follow[] @relation("following")
+  following  Follow[] @relation("follower")
 }
 
 model Post {
   id        Int  @id @default(autoincrement())
-  username  String
-  text      String
+  post     String
   createdAt DateTime @default(now()) 
+  // relation with the user, like and comment models
   author    User      @relation(fields: [authorId], references: [id])
   authorId  Int
   likes      Like[]
@@ -38,36 +40,39 @@ model Post {
 
 model Profile {
   id         Int      @id @default(autoincrement())
-  username   String   @unique
-  firstname  String
-  lastname   String
-  email      String   @unique
-  password   String
   bio        String
-  followings String
-  followers  String
   createdAt  DateTime @default(now())
+  // relation with the user model
   user       User     @relation(fields: [userId], references: [id])
   userId     Int   @unique
 }
 model Comment {
   id      Int  @id @default(autoincrement())
-  username  String
+  username String
   comment   String
   createdAt DateTime @default(now())
   // relatoion with the post and user models
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
   post      Post     @relation(fields: [postId], references: [id])
   postId    Int
 }
 model Like {
   id        Int  @id @default(autoincrement())  
-  username  String
   createdAt DateTime @default(now())
   user       User     @relation(fields: [userId], references: [id])
   userId    Int
   post      Post     @relation(fields: [postId], references: [id])
   postId    Int
   @@unique([userId, postId])
+}
+model Follow {
+  follower    User @relation("follower", fields: [followerId], references: [id])
+  followerId  Int
+  following   User @relation("following", fields: [followingId], references: [id])
+  followingId Int
+
+  @@id([followerId, followingId]) 
 }
 
 
