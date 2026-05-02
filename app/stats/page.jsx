@@ -1,12 +1,11 @@
-'use client';
+'use client'
+import React,{useEffect,useState} from 'react';
 
-import AvgCards from "../components/AvgCards";
-import { useEffect,useState } from "react";
 
-export default function Dashboard(){
-
+export default function CalulationFunction(){
+    // for everythign from profiles
     const[profiles,setProfiles] = useState([]);
-
+    // for everything feed
     const [feed,setFeed] = useState([]);
 
     useEffect(()=>{
@@ -75,16 +74,39 @@ export default function Dashboard(){
     const likesAvg = postNo>0?
     (likesCounter/postNo).toFixed(2):0;
     
-
+    
     return(
-        <div className="dasboard-grid">
-            <AvgCards title="Total Profiles" avg_value={profilesNo} />
-            <AvgCards title="Avg followers per user" avg_value={followersAvg}/>
-            <AvgCards title="Most Famouse User" avg_value={mostFamousUser}/>
-            <AvgCards title="Avg Comments per post"   avg_value={commentsAvg}/>
-            <AvgCards title="Most Commented Post"  avg_value={mostCommentedPost}/>
-            <AvgCards title="Most Likes Post" avg_value={mostLikesPost}/>
-        </div>
-    );
+        <div>
+            <h2>Profiles: {profilesNo}</h2>
+            <h2>Averge Followers: {followersAvg}</h2>
+            <h2>Max Followers: {maxFollowers},{mostFamousUser}</h2>
 
-}
+            <h2>Comments: {postNo}</h2>
+            <h2>Averge Comments: {commentsAvg}</h2>
+            <h2>Max No. Comments: {maxComments},{mostCommentedPost}</h2>
+            
+            <h2>Liks: {likesCounter}</h2>
+            <h2>Average Likes: {likesAvg}</h2>
+            <h2>Max No. Likes: {maxLikes},{mostLikesPost}</h2>
+        </div>
+
+    );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
