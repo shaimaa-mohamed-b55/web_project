@@ -8,36 +8,29 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const username = searchParams.get("username");
  
-    if (username) auths = auths.filter(b => b.username === username);
+    if (username) {
+        const user = await authRepo.getByUsername(username);
+        if (!user) return NextResponse.json([]);
+        const { password, ...rest } = user;
+        return NextResponse.json([rest]);
+    }
 
-    const returned = auths.map(({password, ...rest})=>rest);
-
-    return NextResponse.json(returned);
+    const auths  = await authRepo.getAll();
+    return NextResponse.json(auths);
 }
 
 export async function POST(request) {
     const body = await request.json();
 
-    if (!body.username || body.lastname === undefined || !body.firstname || !body.email || !body.password  ) {
-        return NextResponse.json(
-            { error: "username, lastname, firstname, email and passwords are required" },
-            { status: 400 }
-        );
+    if (!body.username || !body.lastname || !body.firstname || !body.email || !body.password) {
+        return NextResponse.json({ error: "username, lastname, firstname, email and password are required" }, { status: 400 });
     }
 
-    const newAuth = {
-        ...body,
-        createdAt: new Date().toLocaleString()
-    };
-
-    const existing = await authRepo.getById(body.username);
-    if(existing){
-        return NextResponse.json(
-            {error: "Username already taken"}, {status:400}
-        );
+    const existing = await authRepo.getByUsername(body.username);
+    if (existing) {
+        return NextResponse.json({ error: "Username already taken" }, { status: 400 });
     }
 
-
-    const created = await authRepo.create(newAuth);
+    const created = await authRepo.create(body);
     return NextResponse.json(created, { status: 201 });
 }
