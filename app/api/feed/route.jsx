@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import feedRepo from "@/repos/FeedRepo";
+import feedRepo from "../../../repo/FeedRepo";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();

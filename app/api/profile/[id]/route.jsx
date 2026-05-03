@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import profileRepo from "@/repos/ProfileRepo";
+import profileRepo from "../../../repo/ProfileRepo";
 
 export async function GET(request, { params }) {
     const { id } = await params;

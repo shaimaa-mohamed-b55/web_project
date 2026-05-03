@@ -121,6 +121,13 @@
 }
 
 
+.card{
+    background: var(--color-feed-bg);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--color-primary);
+}
 
 /* desktop screen */
 @media(min-width:1024px) {

@@ -77,7 +77,7 @@ export default function Dashboard(){
     
 
     return(
-        <div className="dasboard-grid">
+        <div className="dashboard-grid">   
             <AvgCards title="Total Profiles" avg_value={profilesNo} />
             <AvgCards title="Avg followers per user" avg_value={followersAvg}/>
             <AvgCards title="Most Famouse User" avg_value={mostFamousUser}/>
