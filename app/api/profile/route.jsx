@@ -1,18 +1,11 @@
 import { NextResponse } from "next/server";
 import profileRepo from "../../../repo/ProfileRepo";
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
 
 export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const username = searchParams.get("username");
     if (username) {
-        const profile = await prisma.profile.findFirst({
-            where: { user: { username } },
-            include: {
-                user: { select: { id: true, username: true, firstname: true, lastname: true, email: true } }
-            }
-        });
+        const profile = await profileRepo.getByUsername(username);
         return NextResponse.json(profile ? [profile] : []);
     }
     const profiles = await profileRepo.getAll();
@@ -24,14 +17,6 @@ export async function POST(request) {
     if (!body.username || !body.bio) {
         return NextResponse.json({ error: "username and bio are required" }, { status: 400 });
     }
-    const user = await prisma.user.findUnique({ where: { username: body.username } });
-    if (!user) {
-        return NextResponse.json({ error: "User does not exist" }, { status: 400 });
-    }
-    const existingProfile = await prisma.profile.findUnique({ where: { userId: user.id } });
-    if (existingProfile) {
-        return NextResponse.json({ error: "User already has a profile" }, { status: 400 });
-    }
-    const created = await profileRepo.create({ bio: body.bio, userId: user.id });
+    const created = await profileRepo.create({ bio: body.bio });
     return NextResponse.json(created, { status: 201 });
 }
