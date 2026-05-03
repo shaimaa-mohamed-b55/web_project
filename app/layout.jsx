@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import NavBar from "@/components/NavBar";
+import "./global.css";
+import NavBar from "../components/NavBar";
 
 // this page is similar to our page index.html
 
@@ -23,12 +23,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        <link rel="stylesheet" href="/style/main.css"/>
+      </head>
       <body>
-
-        <NavBar title={"Our Social Media Platform"}></NavBar>
+        <NavBar title={"Our Social Media Platform"}/>
         {children}
-        <NavBar></NavBar>
-
+        <NavBar/>
         </body>
     </html>
   );

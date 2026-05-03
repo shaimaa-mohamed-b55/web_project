@@ -1,9 +1,14 @@
 // import { promises as fs } from "fs";
 // import path from "path";
 
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
-
+import { PrismaClient } from "../app/generated/prisma";
+const prisma = new PrismaClient({
+    datasource:{
+        db:{
+            url: process.env.DATABASE_URL,
+        },
+    },
+});
 // const dataPath = path.join(process.cwd(), "data", "feed.json");
 
 class FeedRepo {

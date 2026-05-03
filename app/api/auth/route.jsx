@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import authRepo from "@/repos/AuthRepo";
+import authRepo from "../../../repo/AuthRepo";
 
 
 export async function GET(request) {
