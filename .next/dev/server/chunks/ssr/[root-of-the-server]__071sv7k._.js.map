@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/tasne/OneDrive/Desktop/Spring2026/WebDevelopment/web_project/app/feed/page.jsx"],"sourcesContent":["import React from 'react'\r\n\r\nfunction Feed() {\r\n  return (\r\n    <div>\r\n      <h1>Feed Page Loaded</h1>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Feed\r\n"],"names":["Feed"],"mappings":";;;;;AAAA;;;AAEA,SAASA;IACP,qBACE,8OAAC;kBACC,cAAA,8OAAC;sBAAG;;;;;;;;;;;AAGV;uCAEeA"}}]
-}

@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/tasne/OneDrive/Desktop/Spring2026/WebDevelopment/web_project/app/profile/page.jsx"],"sourcesContent":["import React from 'react'\r\n\r\nfunction Profile() {\r\n  return (\r\n    <div>\r\n      <h1>Profile Page Loaded</h1>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Profile\r\n"],"names":["Profile"],"mappings":";;;;;AAAA;;;AAEA,SAASA;IACP,qBACE,8OAAC;kBACC,cAAA,8OAAC;sBAAG;;;;;;;;;;;AAGV;uCAEeA"}}]
-}

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import authRepo from "../../../repo/AuthRepo";
 
 export async function GET(request, { params }) {
-    const { id } = await params;
+    const { id } =  params;
     const auth = await authRepo.getById(id);
 
     if (!auth) {

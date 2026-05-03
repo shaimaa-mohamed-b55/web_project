@@ -2,7 +2,7 @@
   {
     "id": "ahmed_99-1714564800000",
     "username": "ahmed_99",
-    "post": "Exploring the hidden gems of the city today. The architecture here is absolutely breathtaking!",
+    "text": "Exploring the hidden gems of the city today. The architecture here is absolutely breathtaking!",
     "createdAt": "2026-05-01 09:00:00",
     "likes": ["sara_dev", "omar_tech", "faisal_a"],
     "comments": [
@@ -21,7 +21,7 @@
   {
     "id": "sara_dev-1714565400000",
     "username": "sara_dev",
-    "post": "Just finished reading a mystery novel. That plot twist at the end was totally unexpected!",
+    "text": "Just finished reading a mystery novel. That plot twist at the end was totally unexpected!",
     "createdAt": "2026-05-01 10:30:00",
     "likes": ["layla_m", "nour_star", "lina_art"],
     "comments": [
@@ -35,7 +35,7 @@
   {
     "id": "omar_tech-1714566000000",
     "username": "omar_tech",
-    "post": "There is nothing like a morning run to clear your head and start the day with fresh energy.",
+    "text": "There is nothing like a morning run to clear your head and start the day with fresh energy.",
     "createdAt": "2026-05-01 11:00:00",
     "likes": ["ahmed_99", "khaled_v", "ali_pro"],
     "comments": [
@@ -49,7 +49,7 @@
   {
     "id": "layla_m-1714566600000",
     "username": "layla_m",
-    "post": "Tried a new Italian restaurant tonight. The pasta was 10/10. Highly recommend!",
+    "text": "Tried a new Italian restaurant tonight. The pasta was 10/10. Highly recommend!",
     "createdAt": "2026-05-01 12:00:00",
     "likes": ["mariam_k", "reem_sky", "dana_blue"],
     "comments": [
@@ -63,7 +63,7 @@
   {
     "id": "faisal_a-1714567200000",
     "username": "faisal_a",
-    "post": "Thinking about getting a new pet. Should I go with a cat or a dog?",
+    "text": "Thinking about getting a new pet. Should I go with a cat or a dog?",
     "createdAt": "2026-05-01 01:30:00",
     "likes": ["abdullah_k", "youssef_j", "huda_r"],
     "comments": [
@@ -77,7 +77,7 @@
   {
     "id": "nour_star-1714567800000",
     "username": "nour_star",
-    "post": "The beach today was so peaceful. Watching the waves is the best therapy.",
+    "text": "The beach today was so peaceful. Watching the waves is the best therapy.",
     "createdAt": "2026-05-01 05:45:00",
     "likes": ["mona_lisa", "amal_hope", "huda_r"],
     "comments": [
@@ -91,7 +91,7 @@
   {
     "id": "ali_pro-1714568400000",
     "username": "ali_pro",
-    "post": "Taking a weekend trip to the mountains. Can't wait to see the view from the top.",
+    "text": "Taking a weekend trip to the mountains. Can't wait to see the view from the top.",
     "createdAt": "2026-05-01 07:00:00",
     "likes": ["badir_90", "jawaher_a", "nasser_1"],
     "comments": [
@@ -105,7 +105,7 @@
   {
     "id": "reem_sky-1714569000000",
     "username": "reem_sky",
-    "post": "Starting a 30-day yoga challenge. Wish me luck!",
+    "text": "Starting a 30-day yoga challenge. Wish me luck!",
     "createdAt": "2026-05-01 08:00:00",
     "likes": ["mariam_k", "lina_art", "dana_blue"],
     "comments": [
@@ -119,7 +119,7 @@
   {
     "id": "khaled_v-1714569600000",
     "username": "khaled_v",
-    "post": "Coffee and rain—the perfect combination for a Friday afternoon.",
+    "text": "Coffee and rain—the perfect combination for a Friday afternoon.",
     "createdAt": "2026-05-01 03:00:00",
     "likes": ["omar_tech", "faisal_a", "badir_90"],
     "comments": [
@@ -133,7 +133,7 @@
   {
     "id": "mona_lisa-1714570200000",
     "username": "mona_lisa",
-    "post": "Visited a modern art gallery today. Some of the pieces were truly inspiring.",
+    "text": "Visited a modern art gallery today. Some of the pieces were truly inspiring.",
     "createdAt": "2026-05-01 04:30:00",
     "likes": ["nour_star", "amal_hope", "reem_sky"],
     "comments": [
